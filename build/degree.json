@@ -1,0 +1,858 @@
+{
+ "sections": [
+  {
+   "anchor": "UC_FASS",
+   "title": "Üniversite Dersleri",
+   "courses": [
+    {
+     "code": "IF 100",
+     "subj": "IF",
+     "num": "100",
+     "level": "UG",
+     "name_tr": "Problem Çözümünde Bilişimsel Yaklaşımlar",
+     "ects": "5",
+     "su_credits": "3",
+     "faculty": "MDBF",
+     "faculty_course": false
+    },
+    {
+     "code": "MATH 101",
+     "subj": "MATH",
+     "num": "101",
+     "level": "UG",
+     "name_tr": "Diferansiyel ve İntegral Hesap I",
+     "ects": "6",
+     "su_credits": "3",
+     "faculty": "MDBF",
+     "faculty_course": false
+    },
+    {
+     "code": "CIP 101N",
+     "subj": "CIP",
+     "num": "101N",
+     "level": "UG",
+     "name_tr": "Toplumsal Duyarlılık Projeleri I-N",
+     "ects": "1",
+     "su_credits": "0",
+     "faculty": "SSBF",
+     "faculty_course": false
+    },
+    {
+     "code": "NS 101",
+     "subj": "NS",
+     "num": "101",
+     "level": "UG",
+     "name_tr": "Doğa ve Bilim I",
+     "ects": "6",
+     "su_credits": "4",
+     "faculty": "MDBF",
+     "faculty_course": false
+    },
+    {
+     "code": "SPS 101",
+     "subj": "SPS",
+     "num": "101",
+     "level": "UG",
+     "name_tr": "İnsan ve Toplum I",
+     "ects": "6",
+     "su_credits": "3",
+     "faculty": "SSBF",
+     "faculty_course": false
+    },
+    {
+     "code": "TLL 101",
+     "subj": "TLL",
+     "num": "101",
+     "level": "UG",
+     "name_tr": "Türk Dili ve Edebiyatı I",
+     "ects": "3",
+     "su_credits": "2",
+     "faculty": "DO",
+     "faculty_course": false
+    },
+    {
+     "code": "AL 102",
+     "subj": "AL",
+     "num": "102",
+     "level": "UG",
+     "name_tr": "Akademik Okuryazarlıklar",
+     "ects": "5",
+     "su_credits": "3",
+     "faculty": "DO",
+     "faculty_course": false
+    },
+    {
+     "code": "MATH 102",
+     "subj": "MATH",
+     "num": "102",
+     "level": "UG",
+     "name_tr": "Diferansiyel ve İntegral Hesap II",
+     "ects": "6",
+     "su_credits": "3",
+     "faculty": "MDBF",
+     "faculty_course": false
+    },
+    {
+     "code": "NS 102",
+     "subj": "NS",
+     "num": "102",
+     "level": "UG",
+     "name_tr": "Doğa ve Bilim II",
+     "ects": "6",
+     "su_credits": "4",
+     "faculty": "MDBF",
+     "faculty_course": false
+    },
+    {
+     "code": "SPS 102",
+     "subj": "SPS",
+     "num": "102",
+     "level": "UG",
+     "name_tr": "İnsan ve Toplum II",
+     "ects": "6",
+     "su_credits": "3",
+     "faculty": "SSBF",
+     "faculty_course": false
+    },
+    {
+     "code": "TLL 102",
+     "subj": "TLL",
+     "num": "102",
+     "level": "UG",
+     "name_tr": "Türk Dili ve Edebiyatı II",
+     "ects": "3",
+     "su_credits": "2",
+     "faculty": "DO",
+     "faculty_course": false
+    },
+    {
+     "code": "HIST 191",
+     "subj": "HIST",
+     "num": "191",
+     "level": "UG",
+     "name_tr": "Atatürk İlkeleri ve İnkılap Tarihi I",
+     "ects": "3",
+     "su_credits": "2",
+     "faculty": "SSBF",
+     "faculty_course": false
+    },
+    {
+     "code": "HIST 192",
+     "subj": "HIST",
+     "num": "192",
+     "level": "UG",
+     "name_tr": "Atatürk İlkeleri ve İnkılap Tarihi II",
+     "ects": "3",
+     "su_credits": "2",
+     "faculty": "SSBF",
+     "faculty_course": false
+    },
+    {
+     "code": "HUM 201",
+     "subj": "HUM",
+     "num": "201",
+     "level": "UG",
+     "name_tr": "Edebiyatın Büyük Eserleri",
+     "ects": "5",
+     "su_credits": "3",
+     "faculty": "SSBF",
+     "faculty_course": false
+    },
+    {
+     "code": "PROJ 201",
+     "subj": "PROJ",
+     "num": "201",
+     "level": "UG",
+     "name_tr": "Lisans Proje Dersi",
+     "ects": "1",
+     "su_credits": "1",
+     "faculty": "MDBF",
+     "faculty_course": false
+    },
+    {
+     "code": "HUM 202",
+     "subj": "HUM",
+     "num": "202",
+     "level": "UG",
+     "name_tr": "Batı Sanatının Büyük Eserleri",
+     "ects": "5",
+     "su_credits": "3",
+     "faculty": "SSBF",
+     "faculty_course": false
+    },
+    {
+     "code": "HUM 207",
+     "subj": "HUM",
+     "num": "207",
+     "level": "UG",
+     "name_tr": "Batı Felsefesinin Büyük Eserleri",
+     "ects": "5",
+     "su_credits": "3",
+     "faculty": "SSBF",
+     "faculty_course": false
+    },
+    {
+     "code": "SPS 303",
+     "subj": "SPS",
+     "num": "303",
+     "level": "UG",
+     "name_tr": "Hukuk ve Etik",
+     "ects": "5",
+     "su_credits": "3",
+     "faculty": "SSBF",
+     "faculty_course": false
+    },
+    {
+     "code": "HUM 311",
+     "subj": "HUM",
+     "num": "311",
+     "level": "UG",
+     "name_tr": "Edebiyatta Büyük Eserler: Modernite Öncesi Dünya",
+     "ects": "5",
+     "su_credits": "3",
+     "faculty": "SSBF",
+     "faculty_course": false
+    },
+    {
+     "code": "HUM 312",
+     "subj": "HUM",
+     "num": "312",
+     "level": "UG",
+     "name_tr": "Modern Sanatın Büyük Eserleri",
+     "ects": "5",
+     "su_credits": "3",
+     "faculty": "SSBF",
+     "faculty_course": false
+    },
+    {
+     "code": "HUM 317",
+     "subj": "HUM",
+     "num": "317",
+     "level": "UG",
+     "name_tr": "Ahlak Felsefesinin Büyük Eserleri",
+     "ects": "5",
+     "su_credits": "3",
+     "faculty": "SSBF",
+     "faculty_course": false
+    },
+    {
+     "code": "HUM 321",
+     "subj": "HUM",
+     "num": "321",
+     "level": "UG",
+     "name_tr": "Edebiyatta Büyük Eserler: Modern Dünya",
+     "ects": "5",
+     "su_credits": "3",
+     "faculty": "SSBF",
+     "faculty_course": false
+    },
+    {
+     "code": "HUM 322",
+     "subj": "HUM",
+     "num": "322",
+     "level": "UG",
+     "name_tr": "Sanatta Büyük Eserler: Modernite Öncesi Dünya",
+     "ects": "5",
+     "su_credits": "3",
+     "faculty": "SSBF",
+     "faculty_course": false
+    },
+    {
+     "code": "HUM 371",
+     "subj": "HUM",
+     "num": "371",
+     "level": "UG",
+     "name_tr": "Edebiyatta Büyük Eserler: İslam Dünyası",
+     "ects": "5",
+     "su_credits": "3",
+     "faculty": "SSBF",
+     "faculty_course": false
+    }
+   ]
+  },
+  {
+   "anchor": "BAPSIR_REQ",
+   "title": "Zorunlu Dersler",
+   "courses": [
+    {
+     "code": "ECON 202",
+     "subj": "ECON",
+     "num": "202",
+     "level": "UG",
+     "name_tr": "Makroekonomi",
+     "ects": "6",
+     "su_credits": "3",
+     "faculty": "SSBF",
+     "faculty_course": true
+    },
+    {
+     "code": "IR 201",
+     "subj": "IR",
+     "num": "201",
+     "level": "UG",
+     "name_tr": "Uluslararası İlişkiler Teorisi",
+     "ects": "6",
+     "su_credits": "3",
+     "faculty": "SSBF",
+     "faculty_course": true
+    },
+    {
+     "code": "POLS 250",
+     "subj": "POLS",
+     "num": "250",
+     "level": "UG",
+     "name_tr": "Karşılaştırmalı Siyaset",
+     "ects": "6",
+     "su_credits": "3",
+     "faculty": "SSBF",
+     "faculty_course": true
+    },
+    {
+     "code": "POLS 301",
+     "subj": "POLS",
+     "num": "301",
+     "level": "UG",
+     "name_tr": "Siyasal Kuram I",
+     "ects": "6",
+     "su_credits": "3",
+     "faculty": "SSBF",
+     "faculty_course": true
+    },
+    {
+     "code": "POLS 352",
+     "subj": "POLS",
+     "num": "352",
+     "level": "UG",
+     "name_tr": "Türkiye'de Siyasal Hayat I",
+     "ects": "6",
+     "su_credits": "3",
+     "faculty": "SSBF",
+     "faculty_course": false
+    },
+    {
+     "code": "POLS 473",
+     "subj": "POLS",
+     "num": "473",
+     "level": "UG",
+     "name_tr": "Siyasal Kuram II",
+     "ects": "6",
+     "su_credits": "3",
+     "faculty": "SSBF",
+     "faculty_course": false
+    },
+    {
+     "code": "PSIR 300",
+     "subj": "PSIR",
+     "num": "300",
+     "level": "UG",
+     "name_tr": "Proje ve Staj",
+     "ects": "5",
+     "su_credits": "0",
+     "faculty": "SSBF",
+     "faculty_course": false
+    },
+    {
+     "code": "PSIR 311",
+     "subj": "PSIR",
+     "num": "311",
+     "level": "UG",
+     "name_tr": "Siyaset Bilimi ve Uluslararası İlişkiler  için Araştırma Teknikleri I",
+     "ects": "7",
+     "su_credits": "3",
+     "faculty": "SSBF",
+     "faculty_course": false
+    },
+    {
+     "code": "PSIR 401",
+     "subj": "PSIR",
+     "num": "401",
+     "level": "UG",
+     "name_tr": "Siyaset Bilimi ve Uluslararası İlişkiler için Araştırma Teknikleri II",
+     "ects": "6",
+     "su_credits": "3",
+     "faculty": "SSBF",
+     "faculty_course": false
+    }
+   ]
+  },
+  {
+   "anchor": "BAPSIR_C1",
+   "title": "Çekirdek Seçmeli Dersler I (Siyaset Bilimi)",
+   "courses": [
+    {
+     "code": "LAW 312",
+     "subj": "LAW",
+     "num": "312",
+     "level": "UG",
+     "name_tr": "Karşılaştırmalı Anayasa Hukuku",
+     "ects": "6",
+     "su_credits": "3",
+     "faculty": "SSBF",
+     "faculty_course": false
+    },
+    {
+     "code": "POLS 251",
+     "subj": "POLS",
+     "num": "251",
+     "level": "UG",
+     "name_tr": "Sınırlar, Vatandaşlar, Göçmeler, Mülteciler",
+     "ects": "6",
+     "su_credits": "3",
+     "faculty": "SSBF",
+     "faculty_course": false
+    },
+    {
+     "code": "POLS 353",
+     "subj": "POLS",
+     "num": "353",
+     "level": "UG",
+     "name_tr": "Türkiye'de Siyasal Hayat II",
+     "ects": "6",
+     "su_credits": "3",
+     "faculty": "SSBF",
+     "faculty_course": false
+    },
+    {
+     "code": "POLS 404",
+     "subj": "POLS",
+     "num": "404",
+     "level": "UG",
+     "name_tr": "Karşılaştırmalı Parti Sistemleri ve Seçmen Davranışı",
+     "ects": "6",
+     "su_credits": "3",
+     "faculty": "SSBF",
+     "faculty_course": false
+    },
+    {
+     "code": "POLS 455",
+     "subj": "POLS",
+     "num": "455",
+     "level": "UG",
+     "name_tr": "Demokrasinin Yükselişi ve Çöküşü",
+     "ects": "6",
+     "su_credits": "3",
+     "faculty": "SSBF",
+     "faculty_course": false
+    },
+    {
+     "code": "POLS 483",
+     "subj": "POLS",
+     "num": "483",
+     "level": "UG",
+     "name_tr": "Etnisite ve Milliyetçilik",
+     "ects": "6",
+     "su_credits": "3",
+     "faculty": "SSBF",
+     "faculty_course": false
+    },
+    {
+     "code": "POLS 493",
+     "subj": "POLS",
+     "num": "493",
+     "level": "UG",
+     "name_tr": "Karşılaştırmalı Yerel Yönetim",
+     "ects": "6",
+     "su_credits": "3",
+     "faculty": "SSBF",
+     "faculty_course": false
+    },
+    {
+     "code": "SOC 201",
+     "subj": "SOC",
+     "num": "201",
+     "level": "UG",
+     "name_tr": "Toplum Kuramı",
+     "ects": "6",
+     "su_credits": "3",
+     "faculty": "SSBF",
+     "faculty_course": true
+    }
+   ]
+  },
+  {
+   "anchor": "BAPSIR_C2",
+   "title": "Çekirdek Seçmeli Dersler II (Uluslararası İlişkiler)",
+   "courses": [
+    {
+     "code": "CONF 400",
+     "subj": "CONF",
+     "num": "400",
+     "level": "UG",
+     "name_tr": "Uluslararası Çatışma ve Barış",
+     "ects": "6",
+     "su_credits": "3",
+     "faculty": "SSBF",
+     "faculty_course": false
+    },
+    {
+     "code": "IR 301",
+     "subj": "IR",
+     "num": "301",
+     "level": "UG",
+     "name_tr": "Küreselleşme ve Uluslararası İlişkiler",
+     "ects": "6",
+     "su_credits": "3",
+     "faculty": "SSBF",
+     "faculty_course": true
+    },
+    {
+     "code": "IR 342",
+     "subj": "IR",
+     "num": "342",
+     "level": "UG",
+     "name_tr": "Türk Dış Politikası",
+     "ects": "6",
+     "su_credits": "3",
+     "faculty": "SSBF",
+     "faculty_course": false
+    },
+    {
+     "code": "IR 391",
+     "subj": "IR",
+     "num": "391",
+     "level": "UG",
+     "name_tr": "Uluslararası Ekonomi Politikası",
+     "ects": "6",
+     "su_credits": "3",
+     "faculty": "SSBF",
+     "faculty_course": true
+    },
+    {
+     "code": "IR 394",
+     "subj": "IR",
+     "num": "394",
+     "level": "UG",
+     "name_tr": "Dünya Politikaları",
+     "ects": "6",
+     "su_credits": "3",
+     "faculty": "SSBF",
+     "faculty_course": true
+    },
+    {
+     "code": "IR 405",
+     "subj": "IR",
+     "num": "405",
+     "level": "UG",
+     "name_tr": "Avrupa Dış Politikası",
+     "ects": "6",
+     "su_credits": "3",
+     "faculty": "SSBF",
+     "faculty_course": false
+    },
+    {
+     "code": "IR 489",
+     "subj": "IR",
+     "num": "489",
+     "level": "UG",
+     "name_tr": "İnsan Hakları ve Dünya Düzeni",
+     "ects": "6",
+     "su_credits": "3",
+     "faculty": "SSBF",
+     "faculty_course": false
+    },
+    {
+     "code": "LAW 311",
+     "subj": "LAW",
+     "num": "311",
+     "level": "UG",
+     "name_tr": "Uluslararası Hukuk",
+     "ects": "6",
+     "su_credits": "3",
+     "faculty": "SSBF",
+     "faculty_course": false
+    },
+    {
+     "code": "POLS 492",
+     "subj": "POLS",
+     "num": "492",
+     "level": "UG",
+     "name_tr": "Avrupa Birliği:Politikalar, Siyasalar ve Yönetim",
+     "ects": "6",
+     "su_credits": "3",
+     "faculty": "SSBF",
+     "faculty_course": false
+    }
+   ]
+  },
+  {
+   "anchor": "BAPSIR_AEL",
+   "title": "Alan Seçmeli Dersler",
+   "courses": [
+    {
+     "code": "CONF 431",
+     "subj": "CONF",
+     "num": "431",
+     "level": "UG",
+     "name_tr": "Uyuşmazlık Çözümü Uygulamaları",
+     "ects": "6",
+     "su_credits": "3",
+     "faculty": "SSBF",
+     "faculty_course": false
+    },
+    {
+     "code": "CULT 384",
+     "subj": "CULT",
+     "num": "384",
+     "level": "UG",
+     "name_tr": "Politik Ekoloji ve Toplum",
+     "ects": "6",
+     "su_credits": "3",
+     "faculty": "SSBF",
+     "faculty_course": false
+    },
+    {
+     "code": "DSA 201",
+     "subj": "DSA",
+     "num": "201",
+     "level": "UG",
+     "name_tr": "Veri Bilimi için İleri Programlama",
+     "ects": "6",
+     "su_credits": "3",
+     "faculty": "MDBF",
+     "faculty_course": true
+    },
+    {
+     "code": "ECON 320",
+     "subj": "ECON",
+     "num": "320",
+     "level": "UG",
+     "name_tr": "Kamu Ekonomisi",
+     "ects": "6",
+     "su_credits": "3",
+     "faculty": "SSBF",
+     "faculty_course": false
+    },
+    {
+     "code": "IR 341",
+     "subj": "IR",
+     "num": "341",
+     "level": "UG",
+     "name_tr": "Küresel İdare",
+     "ects": "6",
+     "su_credits": "3",
+     "faculty": "SSBF",
+     "faculty_course": false
+    },
+    {
+     "code": "PHIL 301",
+     "subj": "PHIL",
+     "num": "301",
+     "level": "UG",
+     "name_tr": "Sosyal Bilimler Felsefesi",
+     "ects": "6",
+     "su_credits": "3",
+     "faculty": "SSBF",
+     "faculty_course": false
+    },
+    {
+     "code": "PHIL 450",
+     "subj": "PHIL",
+     "num": "450",
+     "level": "UG",
+     "name_tr": "Bilim ve Toplum",
+     "ects": "6",
+     "su_credits": "3",
+     "faculty": "SSBF",
+     "faculty_course": false
+    },
+    {
+     "code": "POLS 351",
+     "subj": "POLS",
+     "num": "351",
+     "level": "UG",
+     "name_tr": "Siyasal Değişimin Dinamikleri",
+     "ects": "6",
+     "su_credits": "3",
+     "faculty": "SSBF",
+     "faculty_course": false
+    },
+    {
+     "code": "POLS 366",
+     "subj": "POLS",
+     "num": "366",
+     "level": "UG",
+     "name_tr": "Siyaset Bilimi ve Uluslararasi Iliskiler: Seçilmis Konular",
+     "ects": "6",
+     "su_credits": "3",
+     "faculty": "SSBF",
+     "faculty_course": false
+    },
+    {
+     "code": "POLS 399",
+     "subj": "POLS",
+     "num": "399",
+     "level": "UG",
+     "name_tr": "Serbest Çalışma",
+     "ects": "6",
+     "su_credits": "3",
+     "faculty": "SSBF",
+     "faculty_course": false
+    },
+    {
+     "code": "POLS 403",
+     "subj": "POLS",
+     "num": "403",
+     "level": "UG",
+     "name_tr": "Siyaset Psikolojisinin Temelleri",
+     "ects": "6",
+     "su_credits": "3",
+     "faculty": "SSBF",
+     "faculty_course": false
+    },
+    {
+     "code": "POLS 408",
+     "subj": "POLS",
+     "num": "408",
+     "level": "UG",
+     "name_tr": "İslam Dünyasında Din ve Siyaset",
+     "ects": "6",
+     "su_credits": "3",
+     "faculty": "SSBF",
+     "faculty_course": false
+    },
+    {
+     "code": "POLS 422",
+     "subj": "POLS",
+     "num": "422",
+     "level": "UG",
+     "name_tr": "Siyaset ve Kültür",
+     "ects": "6",
+     "su_credits": "3",
+     "faculty": "SSBF",
+     "faculty_course": false
+    },
+    {
+     "code": "POLS 434",
+     "subj": "POLS",
+     "num": "434",
+     "level": "UG",
+     "name_tr": "Siyasal Analiz ve Formel Modelleme I",
+     "ects": "6",
+     "su_credits": "3",
+     "faculty": "SSBF",
+     "faculty_course": false
+    },
+    {
+     "code": "POLS 446",
+     "subj": "POLS",
+     "num": "446",
+     "level": "UG",
+     "name_tr": "Latin Amerika Siyasal Hayatı",
+     "ects": "6",
+     "su_credits": "3",
+     "faculty": "SSBF",
+     "faculty_course": false
+    },
+    {
+     "code": "POLS 457",
+     "subj": "POLS",
+     "num": "457",
+     "level": "UG",
+     "name_tr": "Otoriter Rejimlerde Siyaset",
+     "ects": "6",
+     "su_credits": "3",
+     "faculty": "SSBF",
+     "faculty_course": false
+    },
+    {
+     "code": "SOC 301",
+     "subj": "SOC",
+     "num": "301",
+     "level": "UG",
+     "name_tr": "Siyaset Sosyolojisi",
+     "ects": "6",
+     "su_credits": "3",
+     "faculty": "SSBF",
+     "faculty_course": true
+    },
+    {
+     "code": "SOC 408",
+     "subj": "SOC",
+     "num": "408",
+     "level": "UG",
+     "name_tr": "Din ve Siyaset",
+     "ects": "6",
+     "su_credits": "3",
+     "faculty": "SSBF",
+     "faculty_course": false
+    },
+    {
+     "code": "SOC 420",
+     "subj": "SOC",
+     "num": "420",
+     "level": "UG",
+     "name_tr": "Altyapı ve Hareketlilikler",
+     "ects": "6",
+     "su_credits": "3",
+     "faculty": "SSBF",
+     "faculty_course": false
+    },
+    {
+     "code": "SOC 425",
+     "subj": "SOC",
+     "num": "425",
+     "level": "UG",
+     "name_tr": "İktidar, Ekonomi ve Toplum Pratiği",
+     "ects": "6",
+     "su_credits": "3",
+     "faculty": "SSBF",
+     "faculty_course": false
+    },
+    {
+     "code": "SPS 374",
+     "subj": "SPS",
+     "num": "374",
+     "level": "UG",
+     "name_tr": "Küresel Çevre Sorunları",
+     "ects": "6",
+     "su_credits": "3",
+     "faculty": "SSBF",
+     "faculty_course": false
+    },
+    {
+     "code": "SPS 384",
+     "subj": "SPS",
+     "num": "384",
+     "level": "UG",
+     "name_tr": "İklim Değişikliği ve Çevre Politikaları",
+     "ects": "6",
+     "su_credits": "3",
+     "faculty": "SSBF",
+     "faculty_course": false
+    },
+    {
+     "code": "SPS 394",
+     "subj": "SPS",
+     "num": "394",
+     "level": "UG",
+     "name_tr": "Politik Ekoloji ve Toplum",
+     "ects": "6",
+     "su_credits": "3",
+     "faculty": "SSBF",
+     "faculty_course": false
+    },
+    {
+     "code": "SPS 404",
+     "subj": "SPS",
+     "num": "404",
+     "level": "UG",
+     "name_tr": "Altı Temel Küresel Sorun: Tarihsel Bir  Perspektif",
+     "ects": "6",
+     "su_credits": "3",
+     "faculty": "SSBF",
+     "faculty_course": false
+    }
+   ]
+  },
+  {
+   "anchor": "BAPSIR_FEL",
+   "title": "Serbest Seçmeli Dersler",
+   "courses": []
+  },
+  {
+   "anchor": "FC_FASS",
+   "title": "Fakülte Dersleri",
+   "courses": []
+  }
+ ]
+}

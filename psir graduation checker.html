@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Political Science and International Relations — Graduation Check</title>
+<style>
+  :root { --ink:#282b36; --muted:#6b7280; --line:#e2e5ec; --ok:#1f7a44; --bad:#b3402f; --warn:#a86400; }
+  * { box-sizing:border-box; }
+  body { margin:0; font:14px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; color:var(--ink); background:#f7f8fb; }
+  header { position:sticky; top:0; z-index:5; background:#fff; border-bottom:1px solid var(--line); padding:14px 20px; }
+  h1 { margin:0 0 10px; font-size:17px; }
+  .verdict { display:flex; align-items:center; gap:12px; flex-wrap:wrap; }
+  .badge { padding:6px 12px; border-radius:999px; font-weight:700; font-size:13px; }
+  .badge.ok { background:#e3f5e9; color:var(--ok); }
+  .badge.bad { background:#fdeceb; color:var(--bad); }
+  .stats { color:var(--muted); font-size:12.5px; }
+  button { font:inherit; font-size:12.5px; padding:5px 11px; border:1px solid var(--line); background:#fff; border-radius:7px; cursor:pointer; }
+  button:hover { background:#f2f4f8; }
+  main { display:grid; grid-template-columns:minmax(0,1fr) 400px; gap:20px; padding:20px; align-items:start; }
+  @media (max-width:1100px) { main { grid-template-columns:1fr; } }
+  .card { background:#fff; border:1px solid var(--line); border-radius:12px; margin-bottom:16px; overflow:hidden; }
+  .card > h2 { margin:0; padding:12px 14px; font-size:14px; border-bottom:1px solid var(--line); display:flex; justify-content:space-between; align-items:baseline; gap:10px; }
+  .card > h2 small { font-weight:400; color:var(--muted); font-size:11.5px; }
+  .rule { padding:8px 14px; font-size:12px; color:var(--muted); background:#fbfbfd; border-bottom:1px solid var(--line); }
+  .row { display:flex; align-items:center; gap:10px; padding:7px 14px; border-bottom:1px solid #f1f2f6; cursor:pointer; }
+  .row:last-child { border-bottom:0; }
+  .row:hover { background:#fafbfe; }
+  .row input { width:16px; height:16px; flex:none; accent-color:#3b6fd4; }
+  .code { font-weight:600; flex:none; width:78px; }
+  .name { flex:1; min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+  .meta { color:var(--muted); font-size:11.5px; flex:none; display:flex; gap:8px; align-items:center; }
+  .chip { padding:1px 7px; border-radius:999px; font-size:10.5px; font-weight:600; }
+  .chip.Fall { background:#fdf0da; color:#a86400; }
+  .chip.Spring { background:#e4f3e4; color:#2f7a2f; }
+  .chip.Both { background:#e5edfb; color:#2c5fa8; }
+  .chip.Stale { background:#fbe4e4; color:#a33a3a; }
+  .row.done { background:#f4fbf6; }
+  .req { padding:11px 14px; border-bottom:1px solid #f1f2f6; }
+  .req:last-child { border-bottom:0; }
+  .req .head { display:flex; justify-content:space-between; gap:10px; font-weight:600; font-size:13px; }
+  .req .head .state { font-weight:700; font-size:11.5px; }
+  .req .state.ok { color:var(--ok); } .req .state.bad { color:var(--bad); }
+  .req ul { margin:6px 0 0; padding-left:16px; }
+  .req li { font-size:12px; color:var(--muted); }
+  .req li.ok { color:var(--ok); } .req li.bad { color:var(--bad); }
+  .bar { height:5px; border-radius:3px; background:#eceef4; margin-top:7px; overflow:hidden; }
+  .bar > i { display:block; height:100%; background:#3b6fd4; }
+  .bar.ok > i { background:#2f9e5c; }
+  .manual { display:flex; align-items:center; gap:8px; padding:9px 14px; border-bottom:1px solid #f1f2f6; font-size:12.5px; }
+  .manual:last-child { border-bottom:0; }
+  .manual input { width:64px; font:inherit; font-size:13px; padding:3px 6px; border:1px solid var(--line); border-radius:6px; }
+  .issues li { font-size:12.5px; margin-bottom:5px; }
+  .issues .none { color:var(--ok); font-size:12.5px; }
+  #filter { font:inherit; font-size:13px; padding:6px 10px; border:1px solid var(--line); border-radius:8px; width:220px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Political Science and International Relations — Graduation Check <a style="font-size:12.5px;font-weight:400;margin-left:10px" href="psir%20prereq.html">Prerequisite map →</a></h1>
+  <div class="verdict">
+    <span id="badge" class="badge bad">…</span>
+    <span class="stats" id="stats"></span>
+    <input id="filter" type="search" placeholder="Filter courses…" />
+    <button id="clear">Clear all</button>
+  </div>
+</header>
+<main>
+  <section id="checklist"></section>
+  <aside>
+    <div class="card">
+      <h2>Graduation requirements <small>click a course to tick it</small></h2>
+      <div id="requirements"></div>
+    </div>
+    <div class="card">
+      <h2>Open pools <small>not enumerable from the degree page</small></h2>
+      <div class="manual">
+        <label>Free electives taken (SU credits)</label>
+        <input id="free" type="number" min="0" step="3" value="0" />
+      </div>
+      <div class="manual">
+        <label>Extra faculty courses not listed here</label>
+        <input id="fcextra" type="number" min="0" step="1" value="0" />
+      </div>
+    </div>
+    <div class="card">
+      <h2>Prerequisite problems</h2>
+      <ul class="issues" id="issues" style="margin:10px 14px 12px; padding-left:16px;"></ul>
+    </div>
+  </aside>
+</main>
+<script id="data" type="application/json">{"program":"BAPSIR","title":"Political Science and International Relations — Graduation Check","totals":{"credits":125,"ects":240},"groups":[{"key":"REQ","title":"Required Courses","tr":"Zorunlu Dersler","min_credits":24,"min_courses":7,"rule":"All nine listed courses are mandatory."},{"key":"C1","title":"Core Elective I — Political Science","tr":"Cekirdek Secmeli I","min_credits":12,"min_courses":4,"rule":"At least 12 SU credits from this pool."},{"key":"C2","title":"Core Elective II — International Relations","tr":"Cekirdek Secmeli II","min_credits":12,"min_courses":4,"rule":"At least 12 SU credits from this pool."},{"key":"AEL","title":"Area Electives","tr":"Alan Secmeli Dersler","min_credits":15,"min_courses":5,"rule":"At least 15 SU credits from this pool."},{"key":"UC","title":"University Courses","tr":"Universite Dersleri","min_credits":44,"min_courses":17,"rule":"17 courses / 44 SU credits. Every 1XX course, PROJ 201 and SPS 303 is mandatory, plus two HUM courses: a 2xx first, then a 3xx."},{"key":"OTHER","title":"Other courses you may have taken","tr":"","min_credits":0,"min_courses":0,"rule":"Not on the degree page, but they are prerequisites of listed courses and count as free electives."}],"courses":[{"code":"IF100","name":"Computational Approaches to Problem Solving","subject":"IF","num":"100","group":"UC","credits":3,"ects":5,"season":"Fall & Spring","faculty_course":false,"mandatory":true,"prereq":null,"prereq_text":"NONE"},{"code":"MATH101","name":"Calculus I","subject":"MATH","num":"101","group":"UC","credits":3,"ects":6,"season":"Fall & Spring","faculty_course":false,"mandatory":true,"prereq":null,"prereq_text":"NONE"},{"code":"CIP101N","name":"Civic Involvement Projects I-N","subject":"CIP","num":"101N","group":"UC","credits":0,"ects":1,"season":"Fall & Spring","faculty_course":false,"mandatory":true,"prereq":null,"prereq_text":"NONE"},{"code":"NS101","name":"Science of Nature I","subject":"NS","num":"101","group":"UC","credits":4,"ects":6,"season":"Fall & Spring","faculty_course":false,"mandatory":true,"prereq":null,"prereq_text":"NONE"},{"code":"SPS101","name":"Humanity and Society I","subject":"SPS","num":"101","group":"UC","credits":3,"ects":6,"season":"Fall & Spring","faculty_course":false,"mandatory":true,"prereq":null,"prereq_text":"NONE"},{"code":"TLL101","name":"Turkish Language and Literature I","subject":"TLL","num":"101","group":"UC","credits":2,"ects":3,"season":"Fall & Spring","faculty_course":false,"mandatory":true,"prereq":null,"prereq_text":"NONE"},{"code":"AL102","name":"Academic Literacies","subject":"AL","num":"102","group":"UC","credits":3,"ects":5,"season":"Fall & Spring","faculty_course":false,"mandatory":true,"prereq":null,"prereq_text":"NONE"},{"code":"MATH102","name":"Calculus II","subject":"MATH","num":"102","group":"UC","credits":3,"ects":6,"season":"Fall & Spring","faculty_course":false,"mandatory":true,"prereq":"MATH 101","prereq_text":"MATH101"},{"code":"NS102","name":"Science of Nature II","subject":"NS","num":"102","group":"UC","credits":4,"ects":6,"season":"Fall & Spring","faculty_course":false,"mandatory":true,"prereq":"NS 101","prereq_text":"NS101"},{"code":"SPS102","name":"Humanity and Society II","subject":"SPS","num":"102","group":"UC","credits":3,"ects":6,"season":"Fall & Spring","faculty_course":false,"mandatory":true,"prereq":"SPS 101","prereq_text":"SPS101"},{"code":"TLL102","name":"Turkish Language and Literature II","subject":"TLL","num":"102","group":"UC","credits":2,"ects":3,"season":"Fall & Spring","faculty_course":false,"mandatory":true,"prereq":"TLL 101","prereq_text":"TLL101"},{"code":"HIST191","name":"Principles of Atatürk and the History of the Turkish Revolution I","subject":"HIST","num":"191","group":"UC","credits":2,"ects":3,"season":"Fall & Spring","faculty_course":false,"mandatory":true,"prereq":null,"prereq_text":"NONE"},{"code":"HIST192","name":"Principles of Atatürk and the History of the Turkish Revolution II","subject":"HIST","num":"192","group":"UC","credits":2,"ects":3,"season":"Fall & Spring","faculty_course":false,"mandatory":true,"prereq":"HIST 191","prereq_text":"HIST191"},{"code":"HUM201","name":"Major Works of Literature","subject":"HUM","num":"201","group":"UC","credits":3,"ects":5,"season":"Fall & Spring","faculty_course":false,"mandatory":false,"prereq":{"args":["SPS 101","SPS 102"],"op":"and"},"prereq_text":"(SPS101 AND SPS102)"},{"code":"PROJ201","name":"Undergraduate Project Course","subject":"PROJ","num":"201","group":"UC","credits":1,"ects":1,"season":"Fall & Spring","faculty_course":false,"mandatory":true,"prereq":null,"prereq_text":"NONE"},{"code":"HUM202","name":"Major Works of Western Art","subject":"HUM","num":"202","group":"UC","credits":3,"ects":5,"season":"Fall & Spring","faculty_course":false,"mandatory":false,"prereq":{"args":["SPS 101","SPS 102"],"op":"and"},"prereq_text":"(SPS101 AND SPS102)"},{"code":"HUM207","name":"Major Works of Western Philosophy","subject":"HUM","num":"207","group":"UC","credits":3,"ects":5,"season":"Fall & Spring","faculty_course":false,"mandatory":false,"prereq":{"args":["SPS 101","SPS 102"],"op":"and"},"prereq_text":"(SPS101 AND SPS102)"},{"code":"SPS303","name":"Law and Ethics","subject":"SPS","num":"303","group":"UC","credits":3,"ects":5,"season":"Fall & Spring","faculty_course":false,"mandatory":true,"prereq":null,"prereq_text":"NONE"},{"code":"HUM311","name":"Major Works of Literature: The World Before Modernity","subject":"HUM","num":"311","group":"UC","credits":3,"ects":5,"season":"Fall","faculty_course":false,"mandatory":false,"prereq":{"args":["SPS 101","SPS 102",{"args":["HUM 201","HUM 202","HUM 207"],"op":"or"}],"op":"and"},"prereq_text":"(SPS101 AND SPS102 AND (HUM201 OR HUM202 OR HUM207))"},{"code":"HUM312","name":"Major Works of Modern Art","subject":"HUM","num":"312","group":"UC","credits":3,"ects":5,"season":"Fall & Spring","faculty_course":false,"mandatory":false,"prereq":{"args":["SPS 101","SPS 102",{"args":["HUM 201","HUM 202","HUM 207"],"op":"or"}],"op":"and"},"prereq_text":"(SPS101 AND SPS102 AND (HUM201 OR HUM202 OR HUM207))"},{"code":"HUM317","name":"Major Works of Moral Philosophy","subject":"HUM","num":"317","group":"UC","credits":3,"ects":5,"season":"Fall & Spring","faculty_course":false,"mandatory":false,"prereq":{"args":["SPS 101","SPS 102",{"args":["HUM 201","HUM 202","HUM 207"],"op":"or"}],"op":"and"},"prereq_text":"(SPS101 AND SPS102 AND (HUM201 OR HUM202 OR HUM207))"},{"code":"HUM321","name":"Major Works of Literature: The Modern World","subject":"HUM","num":"321","group":"UC","credits":3,"ects":5,"season":"Fall & Spring","faculty_course":false,"mandatory":false,"prereq":{"args":["SPS 101","SPS 102",{"args":["HUM 201","HUM 202","HUM 207"],"op":"or"}],"op":"and"},"prereq_text":"(SPS101 AND SPS102 AND (HUM201 OR HUM202 OR HUM207))"},{"code":"HUM322","name":"Major Works of Art: The World Before Modernity","subject":"HUM","num":"322","group":"UC","credits":3,"ects":5,"season":"Fall & Spring","faculty_course":false,"mandatory":false,"prereq":{"args":["SPS 101","SPS 102",{"args":["HUM 201","HUM 202","HUM 207"],"op":"or"}],"op":"and"},"prereq_text":"(SPS101 AND SPS102 AND (HUM201 OR HUM202 OR HUM207))"},{"code":"HUM371","name":"Major Works of Literature: The Islamic World","subject":"HUM","num":"371","group":"UC","credits":3,"ects":5,"season":"Not offered recently","faculty_course":false,"mandatory":false,"prereq":{"args":["SPS 101","SPS 102",{"args":["HUM 201","HUM 202","HUM 207"],"op":"or"}],"op":"and"},"prereq_text":"(SPS101 AND SPS102 AND (HUM201 OR HUM202 OR HUM207))"},{"code":"ECON202","name":"Macroeconomics","subject":"ECON","num":"202","group":"REQ","credits":3,"ects":6,"season":"Fall & Spring","faculty_course":true,"mandatory":false,"prereq":null,"prereq_text":"NONE"},{"code":"IR201","name":"International Relations Theory","subject":"IR","num":"201","group":"REQ","credits":3,"ects":6,"season":"Fall","faculty_course":true,"mandatory":false,"prereq":{"args":["SPS 101","SPS 102"],"op":"and"},"prereq_text":"(SPS101 AND SPS102)"},{"code":"POLS250","name":"Comparative Politics","subject":"POLS","num":"250","group":"REQ","credits":3,"ects":6,"season":"Spring","faculty_course":true,"mandatory":false,"prereq":{"args":["SPS 101","SPS 102"],"op":"and"},"prereq_text":"(SPS101 AND SPS102)"},{"code":"POLS301","name":"Political Theory I","subject":"POLS","num":"301","group":"REQ","credits":3,"ects":6,"season":"Fall","faculty_course":true,"mandatory":false,"prereq":{"args":["SPS 101","SPS 102"],"op":"and"},"prereq_text":"(SPS101 AND SPS102)"},{"code":"POLS352","name":"Turkish Politics I","subject":"POLS","num":"352","group":"REQ","credits":3,"ects":6,"season":"Fall","faculty_course":false,"mandatory":false,"prereq":{"args":["SPS 101","SPS 102"],"op":"or"},"prereq_text":"(SPS101 OR SPS102)"},{"code":"POLS473","name":"Political Theory II","subject":"POLS","num":"473","group":"REQ","credits":3,"ects":6,"season":"Fall","faculty_course":false,"mandatory":false,"prereq":{"args":["SPS 101","SPS 102"],"op":"or"},"prereq_text":"(SPS101 OR SPS102)"},{"code":"PSIR300","name":"Project and Internship","subject":"PSIR","num":"300","group":"REQ","credits":0,"ects":5,"season":"Fall","faculty_course":false,"mandatory":false,"prereq":{"args":["PROJ 102","PROJ 201"],"op":"or"},"prereq_text":"(PROJ102 OR PROJ201)"},{"code":"PSIR311","name":"Research Methods for Political Science and International Relations I","subject":"PSIR","num":"311","group":"REQ","credits":3,"ects":7,"season":"Fall","faculty_course":false,"mandatory":false,"prereq":{"args":["SPS 101","SPS 102"],"op":"and"},"prereq_text":"(SPS101 AND SPS102)"},{"code":"PSIR401","name":"Research Methods for Political Science and International Relations II","subject":"PSIR","num":"401","group":"REQ","credits":3,"ects":6,"season":"Fall & Spring","faculty_course":false,"mandatory":false,"prereq":"PSIR 311","prereq_text":"PSIR311"},{"code":"LAW312","name":"Comparative Constitutional Law","subject":"LAW","num":"312","group":"C1","credits":3,"ects":6,"season":"Spring","faculty_course":false,"mandatory":false,"prereq":null,"prereq_text":"NONE"},{"code":"POLS251","name":"Borders, Citizens, Immigrants, Refugees","subject":"POLS","num":"251","group":"C1","credits":3,"ects":6,"season":"Spring","faculty_course":false,"mandatory":false,"prereq":{"args":["SPS 101","SPS 102"],"op":"or"},"prereq_text":"(SPS101 OR SPS102)"},{"code":"POLS353","name":"Turkish Politics II","subject":"POLS","num":"353","group":"C1","credits":3,"ects":6,"season":"Spring","faculty_course":false,"mandatory":false,"prereq":"POLS 352","prereq_text":"POLS352"},{"code":"POLS404","name":"Comparative Party Systems and Electoral Behavior","subject":"POLS","num":"404","group":"C1","credits":3,"ects":6,"season":"Fall","faculty_course":false,"mandatory":false,"prereq":{"args":["SPS 101","SPS 102"],"op":"or"},"prereq_text":"(SPS101 OR SPS102)"},{"code":"POLS455","name":"Rise and Fall of Democracy","subject":"POLS","num":"455","group":"C1","credits":3,"ects":6,"season":"Fall","faculty_course":false,"mandatory":false,"prereq":{"args":["SPS 101","SPS 102"],"op":"or"},"prereq_text":"(SPS101 OR SPS102)"},{"code":"POLS483","name":"Ethnicity and Nationalism","subject":"POLS","num":"483","group":"C1","credits":3,"ects":6,"season":"Spring","faculty_course":false,"mandatory":false,"prereq":{"args":["SPS 101","SPS 102"],"op":"and"},"prereq_text":"(SPS101 AND SPS102)"},{"code":"POLS493","name":"Comparative Local Government","subject":"POLS","num":"493","group":"C1","credits":3,"ects":6,"season":"Spring","faculty_course":false,"mandatory":false,"prereq":{"args":["SPS 101","SPS 102"],"op":"or"},"prereq_text":"(SPS101 OR SPS102)"},{"code":"SOC201","name":"Social Theory","subject":"SOC","num":"201","group":"C1","credits":3,"ects":6,"season":"Fall & Spring","faculty_course":true,"mandatory":false,"prereq":{"args":["SPS 101","SPS 102"],"op":"and"},"prereq_text":"(SPS101 AND SPS102)"},{"code":"CONF400","name":"International Conflict and Peace","subject":"CONF","num":"400","group":"C2","credits":3,"ects":6,"season":"Fall","faculty_course":false,"mandatory":false,"prereq":{"args":["SPS 101","SPS 102"],"op":"and"},"prereq_text":"(SPS101 AND SPS102)"},{"code":"IR301","name":"Globalization and International Relations","subject":"IR","num":"301","group":"C2","credits":3,"ects":6,"season":"Fall","faculty_course":true,"mandatory":false,"prereq":{"args":["SPS 101","SPS 102","IR 201"],"op":"and"},"prereq_text":"(SPS101 AND SPS102 AND IR201)"},{"code":"IR342","name":"Turkish Foreign Policy","subject":"IR","num":"342","group":"C2","credits":3,"ects":6,"season":"Spring","faculty_course":false,"mandatory":false,"prereq":{"args":["SPS 101","SPS 102"],"op":"or"},"prereq_text":"(SPS101 OR SPS102)"},{"code":"IR391","name":"International Political Economy","subject":"IR","num":"391","group":"C2","credits":3,"ects":6,"season":"Fall & Spring","faculty_course":true,"mandatory":false,"prereq":{"args":["SPS 101","SPS 102","ECON 202","IR 201"],"op":"and"},"prereq_text":"(SPS101 AND SPS102 AND ECON202 AND IR201)"},{"code":"IR394","name":"World Politics","subject":"IR","num":"394","group":"C2","credits":3,"ects":6,"season":"Fall","faculty_course":true,"mandatory":false,"prereq":{"args":["SPS 101","SPS 102"],"op":"or"},"prereq_text":"(SPS101 OR SPS102)"},{"code":"IR405","name":"European Foreign Policy","subject":"IR","num":"405","group":"C2","credits":3,"ects":6,"season":"Fall & Spring","faculty_course":false,"mandatory":false,"prereq":{"args":["SPS 101","SPS 102"],"op":"and"},"prereq_text":"(SPS101 AND SPS102)"},{"code":"IR489","name":"Human Rights in World Affairs","subject":"IR","num":"489","group":"C2","credits":3,"ects":6,"season":"Fall","faculty_course":false,"mandatory":false,"prereq":{"args":["SPS 101","SPS 102"],"op":"and"},"prereq_text":"(SPS101 AND SPS102)"},{"code":"LAW311","name":"International Law","subject":"LAW","num":"311","group":"C2","credits":3,"ects":6,"season":"Spring","faculty_course":false,"mandatory":false,"prereq":null,"prereq_text":"NONE"},{"code":"POLS492","name":"European Union: Politics, Policies and Governance","subject":"POLS","num":"492","group":"C2","credits":3,"ects":6,"season":"Fall","faculty_course":false,"mandatory":false,"prereq":{"args":["SPS 101","SPS 102"],"op":"or"},"prereq_text":"(SPS101 OR SPS102)"},{"code":"CONF431","name":"Conflict Resolution Practice","subject":"CONF","num":"431","group":"AEL","credits":3,"ects":6,"season":"Spring","faculty_course":false,"mandatory":false,"prereq":null,"prereq_text":"NONE"},{"code":"CULT384","name":"Political Ecology and Society","subject":"CULT","num":"384","group":"AEL","credits":3,"ects":6,"season":"Spring","faculty_course":false,"mandatory":false,"prereq":null,"prereq_text":"NONE"},{"code":"DSA201","name":"Advanced Programming for Data Science","subject":"DSA","num":"201","group":"AEL","credits":3,"ects":6,"season":"Fall & Spring","faculty_course":true,"mandatory":false,"prereq":"IF 100","prereq_text":"IF100"},{"code":"ECON320","name":"Public Economics","subject":"ECON","num":"320","group":"AEL","credits":3,"ects":6,"season":"Fall","faculty_course":false,"mandatory":false,"prereq":{"args":["ECON 204","ECON 202","ECON 201"],"op":"and"},"prereq_text":"(ECON204 AND ECON202 AND ECON201)"},{"code":"IR341","name":"Global Governance","subject":"IR","num":"341","group":"AEL","credits":3,"ects":6,"season":"Not offered recently","faculty_course":false,"mandatory":false,"prereq":{"args":["SPS 101","SPS 102"],"op":"or"},"prereq_text":"(SPS101 OR SPS102)"},{"code":"PHIL301","name":"Philosophy of Social Sciences","subject":"PHIL","num":"301","group":"AEL","credits":3,"ects":6,"season":"Spring","faculty_course":false,"mandatory":false,"prereq":{"args":["SPS 101","SPS 102"],"op":"and"},"prereq_text":"(SPS101 AND SPS102)"},{"code":"PHIL450","name":"Science and Society","subject":"PHIL","num":"450","group":"AEL","credits":3,"ects":6,"season":"Spring","faculty_course":false,"mandatory":false,"prereq":null,"prereq_text":"NONE"},{"code":"POLS351","name":"Dynamics of Political Change","subject":"POLS","num":"351","group":"AEL","credits":3,"ects":6,"season":"Not offered recently","faculty_course":false,"mandatory":false,"prereq":{"args":["SPS 101","SPS 102"],"op":"or"},"prereq_text":"(SPS101 OR SPS102)"},{"code":"POLS366","name":"Special Topics in Political Science and International Relations","subject":"POLS","num":"366","group":"AEL","credits":3,"ects":6,"season":"Not offered recently","faculty_course":false,"mandatory":false,"prereq":{"args":["SPS 101","SPS 102"],"op":"and"},"prereq_text":"(SPS101 AND SPS102)"},{"code":"POLS399","name":"Independent Study","subject":"POLS","num":"399","group":"AEL","credits":3,"ects":6,"season":"Fall","faculty_course":false,"mandatory":false,"prereq":{"args":["SPS 101","SPS 102"],"op":"or"},"prereq_text":"(SPS101 OR SPS102)"},{"code":"POLS403","name":"Political Psychology","subject":"POLS","num":"403","group":"AEL","credits":3,"ects":6,"season":"Not offered recently","faculty_course":false,"mandatory":false,"prereq":{"args":["SPS 101","SPS 102"],"op":"and"},"prereq_text":"(SPS101 AND SPS102)"},{"code":"POLS408","name":"Religion and Politics in the Muslim World","subject":"POLS","num":"408","group":"AEL","credits":3,"ects":6,"season":"Spring","faculty_course":false,"mandatory":false,"prereq":{"args":["SPS 101","SPS 102"],"op":"and"},"prereq_text":"(SPS101 AND SPS102)"},{"code":"POLS422","name":"Politics and Culture","subject":"POLS","num":"422","group":"AEL","credits":3,"ects":6,"season":"Not offered recently","faculty_course":false,"mandatory":false,"prereq":{"args":["SPS 101","SPS 102"],"op":"and"},"prereq_text":"(SPS101 AND SPS102)"},{"code":"POLS434","name":"Formal Modelling and Political Analysis I","subject":"POLS","num":"434","group":"AEL","credits":3,"ects":6,"season":"Fall","faculty_course":false,"mandatory":false,"prereq":null,"prereq_text":"NONE"},{"code":"POLS446","name":"Latin American Politics","subject":"POLS","num":"446","group":"AEL","credits":3,"ects":6,"season":"Fall","faculty_course":false,"mandatory":false,"prereq":{"args":["SPS 101","SPS 102"],"op":"and"},"prereq_text":"(SPS101 AND SPS102)"},{"code":"POLS457","name":"The Politics of Authoritarian Regimes","subject":"POLS","num":"457","group":"AEL","credits":3,"ects":6,"season":"Spring","faculty_course":false,"mandatory":false,"prereq":"POLS 250","prereq_text":"POLS250"},{"code":"SOC301","name":"Political Sociology","subject":"SOC","num":"301","group":"AEL","credits":3,"ects":6,"season":"Not offered recently","faculty_course":true,"mandatory":false,"prereq":{"args":["SPS 101","SPS 102"],"op":"and"},"prereq_text":"(SPS101 AND SPS102)"},{"code":"SOC408","name":"Religion and Politics","subject":"SOC","num":"408","group":"AEL","credits":3,"ects":6,"season":"Fall","faculty_course":false,"mandatory":false,"prereq":null,"prereq_text":"NONE"},{"code":"SOC420","name":"Infrastructure and Mobilities","subject":"SOC","num":"420","group":"AEL","credits":3,"ects":6,"season":"Spring","faculty_course":false,"mandatory":false,"prereq":null,"prereq_text":"NONE"},{"code":"SOC425","name":"Power, Economy, and Society","subject":"SOC","num":"425","group":"AEL","credits":3,"ects":6,"season":"Spring","faculty_course":false,"mandatory":false,"prereq":"SOC 201","prereq_text":"SOC201"},{"code":"SPS374","name":"Global Environmental Challenges","subject":"SPS","num":"374","group":"AEL","credits":3,"ects":6,"season":"Fall","faculty_course":false,"mandatory":false,"prereq":null,"prereq_text":"NONE"},{"code":"SPS384","name":"Climate Change and Environmental Politics","subject":"SPS","num":"384","group":"AEL","credits":3,"ects":6,"season":"Spring","faculty_course":false,"mandatory":false,"prereq":null,"prereq_text":"NONE"},{"code":"SPS394","name":"Political Ecology and Society","subject":"SPS","num":"394","group":"AEL","credits":3,"ects":6,"season":"Not offered recently","faculty_course":false,"mandatory":false,"prereq":null,"prereq_text":"NONE"},{"code":"SPS404","name":"Six Key Global Challenges: A Historical Perspective","subject":"SPS","num":"404","group":"AEL","credits":3,"ects":6,"season":"Spring","faculty_course":false,"mandatory":false,"prereq":null,"prereq_text":"NONE"},{"code":"PROJ102","name":"Project Course","subject":"PROJ","num":"102","group":"OTHER","credits":3,"ects":2,"season":"Not offered recently","faculty_course":false,"mandatory":false,"prereq":null,"prereq_text":"NONE"},{"code":"ECON201","name":"Games and Strategies","subject":"ECON","num":"201","group":"OTHER","credits":3,"ects":6,"season":"Fall & Spring","faculty_course":false,"mandatory":false,"prereq":null,"prereq_text":"NONE"},{"code":"ECON204","name":"Microeconomics","subject":"ECON","num":"204","group":"OTHER","credits":3,"ects":6,"season":"Fall & Spring","faculty_course":false,"mandatory":false,"prereq":null,"prereq_text":"NONE"}]}</script>
+<script>
+const D = JSON.parse(document.getElementById('data').textContent);
+const BY_CODE = Object.fromEntries(D.courses.map(c => [c.code, c]));
+const taken = new Set();
+const manual = { free: 0, fcExtra: 0 };
+
+// Faculty-course areas: SSBF's six areas plus MDBF and YBF.
+const AREA = {
+  CULT:'CULT', ECON:'ECON', HART:'HART', VA:'VA', PSYCH:'PSYCH',
+  POLS:'SPS/POLS/IR', IR:'SPS/POLS/IR', CONF:'SPS/POLS/IR', SPS:'SPS/POLS/IR',
+  PSIR:'SPS/POLS/IR', SOC:'SPS/POLS/IR', LAW:'SPS/POLS/IR', PHIL:'SPS/POLS/IR',
+  HIST:'HART', MATH:'MDBF', NS:'MDBF', IF:'MDBF', CS:'MDBF', ENS:'MDBF',
+  PHYS:'MDBF', BIO:'MDBF', DSA:'MDBF', EE:'MDBF', ME:'MDBF', PROJ:'MDBF',
+};
+const SSBF_AREAS = ['CULT','ECON','HART','PSYCH','SPS/POLS/IR','VA'];
+
+const sum = (list, key) => list.reduce((s, c) => s + (c[key] || 0), 0);
+const inGroup = key => D.courses.filter(c => c.group === key);
+const takenIn = key => inGroup(key).filter(c => taken.has(c.code));
+
+function satisfied(expr) {
+  if (!expr) return true;
+  if (typeof expr === 'string') return taken.has(expr.replace(/\s+/g, ''));
+  return expr.op === 'and' ? expr.args.every(satisfied) : expr.args.some(satisfied);
+}
+
+function evaluate() {
+  const reqs = [];
+  const add = (title, sub) => {
+    reqs.push({ title, sub, ok: sub.every(s => s.ok) });
+  };
+
+  // --- Required courses
+  const req = takenIn('REQ');
+  const reqMissing = inGroup('REQ').filter(c => !taken.has(c.code));
+  add('Required Courses', [
+    { label: `all 9 mandatory courses taken (${9 - reqMissing.length}/9)`, ok: !reqMissing.length },
+    { label: `${sum(req, 'credits')}/24 SU credits`, ok: sum(req, 'credits') >= 24 },
+  ]);
+
+  // --- Core electives + area electives
+  for (const g of D.groups.filter(g => ['C1', 'C2', 'AEL'].includes(g.key))) {
+    const list = takenIn(g.key);
+    const credits = sum(list, 'credits');
+    add(g.title, [
+      { label: `${credits}/${g.min_credits} SU credits`, ok: credits >= g.min_credits },
+    ]);
+  }
+
+  // --- University courses
+  const uc = takenIn('UC');
+  const ucCredits = sum(uc, 'credits');
+  const hum = uc.filter(c => c.subject === 'HUM');
+  const hum2 = hum.filter(c => c.num.startsWith('2')).length;
+  const hum3 = hum.filter(c => c.num.startsWith('3')).length;
+  const missingMandatory = inGroup('UC').filter(c => c.mandatory && !taken.has(c.code));
+  add('University Courses', [
+    { label: `${uc.length}/17 courses`, ok: uc.length >= 17 },
+    { label: `${ucCredits}/44 SU credits`, ok: ucCredits >= 44 },
+    { label: `every 1XX course, PROJ 201 and SPS 303 taken (${missingMandatory.length} missing)`, ok: !missingMandatory.length },
+    { label: `two HUM courses, one 2xx then one 3xx (${hum2} 2xx, ${hum3} 3xx)`, ok: hum2 >= 1 && hum3 >= 1 && hum.length >= 2 },
+  ]);
+
+  // --- Free electives (open pool)
+  const freeFromOther = sum(takenIn('OTHER'), 'credits');
+  const free = manual.free + freeFromOther;
+  add('Free Electives', [
+    { label: `${free}/18 SU credits (${freeFromOther} from listed extras, ~${manual.free * 2} ECTS entered)`,
+      ok: free >= 18 },
+  ]);
+
+  // --- Faculty courses
+  const all = D.courses.filter(c => taken.has(c.code));
+  const areas = new Set();
+  let ssbf = 0;
+  for (const c of all) {
+    const area = AREA[c.subject];
+    if (!area) continue;
+    areas.add(area);
+    if (SSBF_AREAS.includes(area)) ssbf += 1;
+  }
+  const fcTotal = all.filter(c => AREA[c.subject]).length + manual.fcExtra;
+  add('Faculty Courses (estimated)', [
+    { label: `${fcTotal}/5 courses from faculty pools`, ok: fcTotal >= 5 },
+    { label: `${ssbf}/3 from SSBF areas`, ok: ssbf >= 3 },
+    { label: `${areas.size}/3 distinct areas (${[...areas].join(', ') || 'none'})`, ok: areas.size >= 3 },
+  ]);
+
+  // --- Totals
+  const totalCredits = sum(all, 'credits') + manual.free;
+  // free electives are entered as SU credits only; Sabanci runs about 2 ECTS per SU credit
+  const totalEcts = sum(all, 'ects') + manual.free * 2;
+  add('Degree totals', [
+    { label: `${totalCredits}/125 SU credits`, ok: totalCredits >= 125 },
+    { label: `${totalEcts}/240 ECTS`, ok: totalEcts >= 240 },
+  ]);
+
+  // --- Prerequisites
+  const issues = [];
+  for (const c of all) {
+    if (c.prereq && !satisfied(c.prereq)) {
+      issues.push({ code: c.code, name: c.name, needs: c.prereq_text });
+      continue;
+    }
+    for (const dep of exprCodes(c.prereq)) {
+      if (!BY_CODE[dep] && !taken.has(dep)) {
+        issues.push({ code: c.code, name: c.name, needs: dep, outside: true });
+        break;
+      }
+    }
+  }
+  return { reqs, issues, totalCredits, totalEcts, takenCount: all.length };
+}
+
+function exprCodes(expr) {
+  if (!expr) return [];
+  if (typeof expr === 'string') return [expr.replace(/\s+/g, '')];
+  return expr.args.flatMap(exprCodes);
+}
+
+// ---------------------------------------------------------------- rendering
+const CHIP = { 'Fall':'Fall', 'Spring':'Spring', 'Fall & Spring':'Both', 'Not offered recently':'Stale' };
+
+function render() {
+  if (!document.getElementById('checklist')) return;
+  const filter = document.getElementById('filter').value.trim().toLowerCase();
+
+  document.getElementById('checklist').innerHTML = D.groups.map(g => {
+    const items = inGroup(g.key).filter(c =>
+      !filter || c.code.toLowerCase().includes(filter) || c.name.toLowerCase().includes(filter));
+    if (!items.length) return '';
+    const credits = sum(items.filter(c => taken.has(c.code)), 'credits');
+    const head = g.min_credits
+      ? `${items.filter(c => taken.has(c.code)).length} of ${items.length} taken · ${credits}/${g.min_credits} SU credits`
+      : `${items.filter(c => taken.has(c.code)).length} of ${items.length} taken`;
+    return `<div class="card">
+      <h2>${g.title} <small>${g.tr ? g.tr + ' · ' : ''}${head}</small></h2>
+      <div class="rule">${g.rule}</div>
+      ${items.map(c => `
+        <label class="row${taken.has(c.code) ? ' done' : ''}">
+          <input type="checkbox" data-code="${c.code}" ${taken.has(c.code) ? 'checked' : ''} />
+          <span class="code">${c.code.replace(/([A-Z]+)(\d)/, '$1 $2')}</span>
+          <span class="name" title="${c.name}">${c.name}${c.mandatory ? ' <b title="mandatory">*</b>' : ''}</span>
+          <span class="meta">
+            <span class="chip ${CHIP[c.season] || ''}">${c.season === 'Not offered recently' ? 'not recent' : c.season}</span>
+            <span>${c.credits} SU · ${c.ects} ECTS</span>
+          </span>
+        </label>`).join('')}
+    </div>`;
+  }).join('');
+
+  const { reqs, issues, totalCredits, totalEcts, takenCount } = evaluate();
+  document.getElementById('requirements').innerHTML = reqs.map(r => `
+    <div class="req">
+      <div class="head"><span>${r.title}</span>
+        <span class="state ${r.ok ? 'ok' : 'bad'}">${r.ok ? 'met' : 'missing'}</span></div>
+      <ul>${r.sub.map(s => `<li class="${s.ok ? 'ok' : 'bad'}">${s.ok ? '✓' : '✗'} ${s.label}</li>`).join('')}</ul>
+    </div>`).join('');
+
+  const bad = reqs.filter(r => !r.ok);
+  const badge = document.getElementById('badge');
+  badge.className = 'badge ' + (bad.length ? 'bad' : 'ok');
+  badge.textContent = bad.length
+    ? `Not yet — ${bad.length} requirement${bad.length > 1 ? 's' : ''} unmet`
+    : 'All graduation requirements met';
+  document.getElementById('stats').textContent =
+    `${takenCount} courses ticked · ${totalCredits} SU credits · ${totalEcts} ECTS`;
+
+  document.getElementById('issues').innerHTML = issues.length
+    ? issues.map(i => `<li><b>${i.code.replace(/([A-Z]+)(\d)/, '$1 $2')}</b> needs ${i.needs}${i.outside ? ' (not in this list)' : ''}</li>`).join('')
+    : '<li class="none">No prerequisite problems.</li>';
+}
+
+function init() {
+  if (!document.getElementById('checklist')) return;
+  try {
+    const saved = JSON.parse(localStorage.getItem('bapsir-check') || '{}');
+    (saved.taken || []).forEach(c => BY_CODE[c] && taken.add(c));
+    manual.free = saved.free || 0;
+    manual.fcExtra = saved.fcExtra || 0;
+    document.getElementById('free').value = manual.free;
+    document.getElementById('fcextra').value = manual.fcExtra;
+  } catch (e) { /* first visit */ }
+
+  const save = () => {
+    try {
+      localStorage.setItem('bapsir-check', JSON.stringify({
+        taken: [...taken], free: manual.free, fcExtra: manual.fcExtra,
+      }));
+    } catch (e) { /* ignore */ }
+  };
+
+  document.addEventListener('change', ev => {
+    const box = ev.target.closest('input[type=checkbox]');
+    if (box) {
+      box.dataset.code && (box.checked ? taken.add(box.dataset.code) : taken.delete(box.dataset.code));
+      save(); render();
+    }
+    if (ev.target.id === 'free' || ev.target.id === 'fcextra') {
+      manual[ev.target.id === 'free' ? 'free' : 'fcExtra'] = Number(ev.target.value) || 0;
+      save(); render();
+    }
+  });
+  document.getElementById('filter').addEventListener('input', render);
+  document.getElementById('clear').addEventListener('click', () => {
+    taken.clear(); manual.free = 0; manual.fcExtra = 0;
+    document.getElementById('free').value = 0;
+    document.getElementById('fcextra').value = 0;
+    save(); render();
+  });
+  render();
+}
+init();
+</script>
+</body>
+</html>

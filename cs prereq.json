@@ -1,0 +1,1775 @@
+{
+  "version": "30.3.11",
+  "pages": [
+    {
+      "id": "BSCS_Prerequisites",
+      "name": "BSCS_Prerequisites",
+      "cells": [
+        {
+          "id": "1",
+          "type": "layer"
+        },
+        {
+          "id": "BSCS_TITLE",
+          "type": "node",
+          "parent": "1",
+          "label": "Prerequisite Map for Computer Science and Engineering Program",
+          "html": "<b>Prerequisite Map for Computer Science and Engineering Program</b>"
+        },
+        {
+          "id": "cwJpv3BAN5XKX392M1sE-2",
+          "type": "node",
+          "parent": "1"
+        },
+        {
+          "id": "IF100",
+          "type": "node",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "label": "IF 100 \n Computational Approaches to Problem Solving",
+          "html": "<b>IF 100</b> <br/> Computational Approaches to Problem Solving",
+          "metadata": {
+            "tooltip": "<div style=\"font-size: 14pt;\">Course: IF100&#xa;Prerequisites: NONE&#xa;Corequisites: nan&#xa;SU Credits: 3&#xa;ECTS Credits: 5&#xa;Science Credits: 0&#xa;Engineering Credits: 5&#xa;</div>"
+          }
+        },
+        {
+          "id": "MATH101",
+          "type": "node",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "label": "MATH 101 \n Calculus I",
+          "html": "<b>MATH 101</b> <br/> Calculus I",
+          "metadata": {
+            "tooltip": "<div style=\"font-size: 14pt;\">Course: MATH101&#xa;Prerequisites: NONE&#xa;Corequisites: MATH101R&#xa;SU Credits: 3&#xa;ECTS Credits: 6&#xa;Science Credits: 6&#xa;Engineering Credits: 0&#xa;</div>"
+          }
+        },
+        {
+          "id": "NS101",
+          "type": "node",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "label": "NS 101 \n Science of Nature I",
+          "html": "<b>NS 101</b> <br/> Science of Nature I",
+          "metadata": {
+            "tooltip": "<div style=\"font-size: 14pt;\">Course: NS101&#xa;Prerequisites: NONE&#xa;Corequisites: nan&#xa;SU Credits: 4&#xa;ECTS Credits: 6&#xa;Science Credits: 6&#xa;Engineering Credits: 0&#xa;</div>"
+          }
+        },
+        {
+          "id": "MATH102",
+          "type": "node",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "label": "MATH 102 \n Calculus II",
+          "html": "<b>MATH 102</b> <br/> Calculus II",
+          "metadata": {
+            "tooltip": "<div style=\"font-size: 14pt;\">Course: MATH102&#xa;Prerequisites: MATH101&#xa;Corequisites: MATH102R&#xa;SU Credits: 3&#xa;ECTS Credits: 6&#xa;Science Credits: 6&#xa;Engineering Credits: 0&#xa;</div>"
+          }
+        },
+        {
+          "id": "PHYS113",
+          "type": "node",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "label": "PHYS 113 \n Basic Concepts of Physics for Scientists and Engineers",
+          "html": "<b>PHYS 113</b> <br/> Basic Concepts of Physics for Scientists and Engineers",
+          "metadata": {
+            "tooltip": "<div style=\"font-size: 14pt;\">Course: PHYS113&#xa;Prerequisites: (MATH101 AND NS101)&#xa;Corequisites: PHYS113L&#xa;SU Credits: 3&#xa;ECTS Credits: 7&#xa;Science Credits: 7&#xa;Engineering Credits: 0&#xa;</div>"
+          }
+        },
+        {
+          "id": "CS201",
+          "type": "node",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "label": "CS 201 \n Programming Fundamentals",
+          "html": "<b>CS 201</b> <br/> Programming Fundamentals",
+          "metadata": {
+            "tooltip": "<div style=\"font-size: 14pt;\">Course: CS201&#xa;Prerequisites: IF100&#xa;Corequisites: CS201R&#xa;SU Credits: 3&#xa;ECTS Credits: 6&#xa;Science Credits: 0&#xa;Engineering Credits: 6&#xa;</div>"
+          }
+        },
+        {
+          "id": "DSA201",
+          "type": "node",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "label": "DSA 201 \n Advanced Programming for Data Science",
+          "html": "<b>DSA 201</b> <br/> Advanced Programming for Data Science",
+          "metadata": {
+            "tooltip": "<div style=\"font-size: 14pt;\">Course: DSA201&#xa;Prerequisites: IF100&#xa;Corequisites: DSA201R&#xa;SU Credits: 3&#xa;ECTS Credits: 6&#xa;Science Credits: 3&#xa;Engineering Credits: 3&#xa;</div>"
+          }
+        },
+        {
+          "id": "MATH201",
+          "type": "node",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "label": "MATH 201 \n Linear Algebra",
+          "html": "<b>MATH 201</b> <br/> Linear Algebra",
+          "metadata": {
+            "tooltip": "<div style=\"font-size: 14pt;\">Course: MATH201&#xa;Prerequisites: NONE&#xa;Corequisites: MATH201R&#xa;SU Credits: 3&#xa;ECTS Credits: 6&#xa;Science Credits: 6&#xa;Engineering Credits: 0&#xa;</div>"
+          }
+        },
+        {
+          "id": "MATH203",
+          "type": "node",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "label": "MATH 203 \n Introduction to Probability",
+          "html": "<b>MATH 203</b> <br/> Introduction to Probability",
+          "metadata": {
+            "tooltip": "<div style=\"font-size: 14pt;\">Course: MATH203&#xa;Prerequisites: MATH102&#xa;Corequisites: MATH203R&#xa;SU Credits: 3&#xa;ECTS Credits: 6&#xa;Science Credits: 6&#xa;Engineering Credits: 0&#xa;</div>"
+          }
+        },
+        {
+          "id": "CS204",
+          "type": "node",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "label": "CS 204 \n Advanced Programming",
+          "html": "<b>CS 204</b> <br/> Advanced Programming",
+          "metadata": {
+            "tooltip": "<div style=\"font-size: 14pt;\">Course: CS204&#xa;Prerequisites: CS201&#xa;Corequisites: CS204L&#xa;SU Credits: 3&#xa;ECTS Credits: 6&#xa;Science Credits: 0&#xa;Engineering Credits: 6&#xa;</div>"
+          }
+        },
+        {
+          "id": "MATH204",
+          "type": "node",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "label": "MATH 204 \n Discrete Mathematics",
+          "html": "<b>MATH 204</b> <br/> Discrete Mathematics",
+          "metadata": {
+            "tooltip": "<div style=\"font-size: 14pt;\">Course: MATH204&#xa;Prerequisites: NONE&#xa;Corequisites: MATH204R&#xa;SU Credits: 3&#xa;ECTS Credits: 6&#xa;Science Credits: 6&#xa;Engineering Credits: 0&#xa;</div>"
+          }
+        },
+        {
+          "id": "ENS206",
+          "type": "node",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "label": "ENS 206 \n Systems Modeling and Control",
+          "html": "<b>ENS 206</b> <br/> Systems Modeling and Control",
+          "metadata": {
+            "tooltip": "<div style=\"font-size: 14pt;\">Course: ENS206&#xa;Prerequisites: (MATH201 OR MATH212)&#xa;Corequisites: ENS206R&#xa;SU Credits: 3&#xa;ECTS Credits: 6&#xa;Science Credits: 3&#xa;Engineering Credits: 3&#xa;</div>"
+          }
+        },
+        {
+          "id": "DSA210",
+          "type": "node",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "label": "DSA 210 \n Introduction to Data Science",
+          "html": "<b>DSA 210</b> <br/> Introduction to Data Science",
+          "metadata": {
+            "tooltip": "<div style=\"font-size: 14pt;\">Course: DSA210&#xa;Prerequisites: (IF100 AND MATH203)&#xa;Corequisites: DSA210R&#xa;SU Credits: 3&#xa;ECTS Credits: 6&#xa;Science Credits: 2&#xa;Engineering Credits: 4&#xa;</div>"
+          }
+        },
+        {
+          "id": "ENS210",
+          "type": "node",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "label": "ENS 210 \n Computational Biology",
+          "html": "<b>ENS 210</b> <br/> Computational Biology",
+          "metadata": {
+            "tooltip": "<div style=\"font-size: 14pt;\">Course: ENS210&#xa;Prerequisites: (IF100 AND MATH101)&#xa;Corequisites: ENS210L&#xa;SU Credits: 3&#xa;ECTS Credits: 6&#xa;Science Credits: 3&#xa;Engineering Credits: 3&#xa;</div>"
+          }
+        },
+        {
+          "id": "ENS211",
+          "type": "node",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "label": "ENS 211 \n Signals",
+          "html": "<b>ENS 211</b> <br/> Signals",
+          "metadata": {
+            "tooltip": "<div style=\"font-size: 14pt;\">Course: ENS211&#xa;Prerequisites: MATH101&#xa;Corequisites: ENS211R&#xa;SU Credits: 3&#xa;ECTS Credits: 6&#xa;Science Credits: 3&#xa;Engineering Credits: 3&#xa;</div>"
+          }
+        },
+        {
+          "id": "MATH212",
+          "type": "node",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "label": "MATH 212 \n Linear Algebra and Differential Equations",
+          "html": "<b>MATH 212</b> <br/> Linear Algebra and Differential Equations",
+          "metadata": {
+            "tooltip": "<div style=\"font-size: 14pt;\">Course: MATH212&#xa;Prerequisites: MATH102&#xa;Corequisites: MATH212R&#xa;SU Credits: 4&#xa;ECTS Credits: 7&#xa;Science Credits: 7&#xa;Engineering Credits: 0&#xa;</div>"
+          }
+        },
+        {
+          "id": "CS300",
+          "type": "node",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "label": "CS 300 \n Data Structures",
+          "html": "<b>CS 300</b> <br/> Data Structures",
+          "metadata": {
+            "tooltip": "<div style=\"font-size: 14pt;\">Course: CS300&#xa;Prerequisites: CS204&#xa;Corequisites: CS300R&#xa;SU Credits: 3&#xa;ECTS Credits: 6&#xa;Science Credits: 1&#xa;Engineering Credits: 5&#xa;</div>"
+          }
+        },
+        {
+          "id": "CS301",
+          "type": "node",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "label": "CS 301 \n Algorithms",
+          "html": "<b>CS 301</b> <br/> Algorithms",
+          "metadata": {
+            "tooltip": "<div style=\"font-size: 14pt;\">Course: CS301&#xa;Prerequisites: (CS300 AND MATH204)&#xa;Corequisites: CS301R&#xa;SU Credits: 3&#xa;ECTS Credits: 6&#xa;Science Credits: 1&#xa;Engineering Credits: 5&#xa;</div>"
+          }
+        },
+        {
+          "id": "CS302",
+          "type": "node",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "label": "CS 302 \n Formal Languages and Automata Theory",
+          "html": "<b>CS 302</b> <br/> Formal Languages and Automata Theory",
+          "metadata": {
+            "tooltip": "<div style=\"font-size: 14pt;\">Course: CS302&#xa;Prerequisites: NONE&#xa;Corequisites: CS302R&#xa;SU Credits: 3&#xa;ECTS Credits: 6&#xa;Science Credits: 2&#xa;Engineering Credits: 4&#xa;</div>"
+          }
+        },
+        {
+          "id": "CS303",
+          "type": "node",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "label": "CS 303 \n Logic and Digital System Design",
+          "html": "<b>CS 303</b> <br/> Logic and Digital System Design",
+          "metadata": {
+            "tooltip": "<div style=\"font-size: 14pt;\">Course: CS303&#xa;Prerequisites: NONE&#xa;Corequisites: CS303L,CS303R&#xa;SU Credits: 4&#xa;ECTS Credits: 7&#xa;Science Credits: 1&#xa;Engineering Credits: 6&#xa;</div>"
+          }
+        },
+        {
+          "id": "CS305",
+          "type": "node",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "label": "CS 305 \n Programming Languages",
+          "html": "<b>CS 305</b> <br/> Programming Languages",
+          "metadata": {
+            "tooltip": "<div style=\"font-size: 14pt;\">Course: CS305&#xa;Prerequisites: CS204&#xa;Corequisites: nan&#xa;SU Credits: 3&#xa;ECTS Credits: 6&#xa;Science Credits: 0&#xa;Engineering Credits: 6&#xa;</div>"
+          }
+        },
+        {
+          "id": "CS306",
+          "type": "node",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "label": "CS 306 \n Database Systems",
+          "html": "<b>CS 306</b> <br/> Database Systems",
+          "metadata": {
+            "tooltip": "<div style=\"font-size: 14pt;\">Course: CS306&#xa;Prerequisites: (CS204 OR DSA201)&#xa;Corequisites: CS306R&#xa;SU Credits: 3&#xa;ECTS Credits: 6&#xa;Science Credits: 0&#xa;Engineering Credits: 6&#xa;</div>"
+          }
+        },
+        {
+          "id": "MATH306",
+          "type": "node",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "label": "MATH 306 \n Statistical Modelling",
+          "html": "<b>MATH 306</b> <br/> Statistical Modelling",
+          "metadata": {
+            "tooltip": "<div style=\"font-size: 14pt;\">Course: MATH306&#xa;Prerequisites: MATH203&#xa;Corequisites: MATH306R&#xa;SU Credits: 3&#xa;ECTS Credits: 6&#xa;Science Credits: 6&#xa;Engineering Credits: 0&#xa;</div>"
+          }
+        },
+        {
+          "id": "CS307",
+          "type": "node",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "label": "CS 307 \n Operating Systems",
+          "html": "<b>CS 307</b> <br/> Operating Systems",
+          "metadata": {
+            "tooltip": "<div style=\"font-size: 14pt;\">Course: CS307&#xa;Prerequisites: CS204&#xa;Corequisites: CS307R&#xa;SU Credits: 3&#xa;ECTS Credits: 6&#xa;Science Credits: 0&#xa;Engineering Credits: 6&#xa;</div>"
+          }
+        },
+        {
+          "id": "CS308",
+          "type": "node",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "label": "CS 308 \n Software Engineering",
+          "html": "<b>CS 308</b> <br/> Software Engineering",
+          "metadata": {
+            "tooltip": "<div style=\"font-size: 14pt;\">Course: CS308&#xa;Prerequisites: CS204&#xa;Corequisites: CS308L&#xa;SU Credits: 4&#xa;ECTS Credits: 7&#xa;Science Credits: 0&#xa;Engineering Credits: 7&#xa;</div>"
+          }
+        },
+        {
+          "id": "EE308",
+          "type": "node",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "label": "EE 308 \n Microcomputer Based System Design",
+          "html": "<b>EE 308</b> <br/> Microcomputer Based System Design",
+          "metadata": {
+            "tooltip": "<div style=\"font-size: 14pt;\">Course: EE308&#xa;Prerequisites: CS303&#xa;Corequisites: EE308R,EE308L&#xa;SU Credits: 4&#xa;ECTS Credits: 7&#xa;Science Credits: 0&#xa;Engineering Credits: 7&#xa;</div>"
+          }
+        },
+        {
+          "id": "BIO310",
+          "type": "node",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "label": "BIO 310 \n Introduction to Bioinformatics",
+          "html": "<b>BIO 310</b> <br/> Introduction to Bioinformatics",
+          "metadata": {
+            "tooltip": "<div style=\"font-size: 14pt;\">Course: BIO310&#xa;Prerequisites: (IF100 AND MATH203)&#xa;Corequisites: BIO310L&#xa;SU Credits: 3&#xa;ECTS Credits: 6&#xa;Science Credits: 6&#xa;Engineering Credits: 0&#xa;</div>"
+          }
+        },
+        {
+          "id": "CS310",
+          "type": "node",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "label": "CS 310 \n Mobile Application Development",
+          "html": "<b>CS 310</b> <br/> Mobile Application Development",
+          "metadata": {
+            "tooltip": "<div style=\"font-size: 14pt;\">Course: CS310&#xa;Prerequisites: CS204&#xa;Corequisites: CS310R&#xa;SU Credits: 3&#xa;ECTS Credits: 6&#xa;Science Credits: 0&#xa;Engineering Credits: 6&#xa;</div>"
+          }
+        },
+        {
+          "id": "CS400",
+          "type": "node",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "label": "CS 400 \n Logic in Computer Science",
+          "html": "<b>CS 400</b> <br/> Logic in Computer Science",
+          "metadata": {
+            "tooltip": "<div style=\"font-size: 14pt;\">Course: CS400&#xa;Prerequisites: MATH204&#xa;Corequisites: nan&#xa;SU Credits: 3&#xa;ECTS Credits: 6&#xa;Science Credits: 3&#xa;Engineering Credits: 3&#xa;</div>"
+          }
+        },
+        {
+          "id": "CS401",
+          "type": "node",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "label": "CS 401 \n Computer Architectures",
+          "html": "<b>CS 401</b> <br/> Computer Architectures",
+          "metadata": {
+            "tooltip": "<div style=\"font-size: 14pt;\">Course: CS401&#xa;Prerequisites: CS303&#xa;Corequisites: CS401L&#xa;SU Credits: 4&#xa;ECTS Credits: 6&#xa;Science Credits: 0&#xa;Engineering Credits: 6&#xa;</div>"
+          }
+        },
+        {
+          "id": "CS403",
+          "type": "node",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "label": "CS 403 \n Distributed Systems",
+          "html": "<b>CS 403</b> <br/> Distributed Systems",
+          "metadata": {
+            "tooltip": "<div style=\"font-size: 14pt;\">Course: CS403&#xa;Prerequisites: CS307&#xa;Corequisites: CS403L&#xa;SU Credits: 3&#xa;ECTS Credits: 6&#xa;Science Credits: 0&#xa;Engineering Credits: 6&#xa;</div>"
+          }
+        },
+        {
+          "id": "ME403",
+          "type": "node",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "label": "ME 403 \n Introduction to Robotics",
+          "html": "<b>ME 403</b> <br/> Introduction to Robotics",
+          "metadata": {
+            "tooltip": "<div style=\"font-size: 14pt;\">Course: ME403&#xa;Prerequisites: ENS206&#xa;Corequisites: ME403L,ME403R&#xa;SU Credits: 4&#xa;ECTS Credits: 7&#xa;Science Credits: 1&#xa;Engineering Credits: 6&#xa;</div>"
+          }
+        },
+        {
+          "id": "CS404",
+          "type": "node",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "label": "CS 404 \n Artificial Intelligence",
+          "html": "<b>CS 404</b> <br/> Artificial Intelligence",
+          "metadata": {
+            "tooltip": "<div style=\"font-size: 14pt;\">Course: CS404&#xa;Prerequisites: (CS201 OR DSA201)&#xa;Corequisites: nan&#xa;SU Credits: 3&#xa;ECTS Credits: 6&#xa;Science Credits: 2&#xa;Engineering Credits: 4&#xa;</div>"
+          }
+        },
+        {
+          "id": "CS405",
+          "type": "node",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "label": "CS 405 \n Computer Graphics",
+          "html": "<b>CS 405</b> <br/> Computer Graphics",
+          "metadata": {
+            "tooltip": "<div style=\"font-size: 14pt;\">Course: CS405&#xa;Prerequisites: CS300&#xa;Corequisites: CS405L&#xa;SU Credits: 3&#xa;ECTS Credits: 6&#xa;Science Credits: 2&#xa;Engineering Credits: 4&#xa;</div>"
+          }
+        },
+        {
+          "id": "CS406",
+          "type": "node",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "label": "CS 406 \n Parallel Computing",
+          "html": "<b>CS 406</b> <br/> Parallel Computing",
+          "metadata": {
+            "tooltip": "<div style=\"font-size: 14pt;\">Course: CS406&#xa;Prerequisites: CS300&#xa;Corequisites: nan&#xa;SU Credits: 3&#xa;ECTS Credits: 6&#xa;Science Credits: 0&#xa;Engineering Credits: 6&#xa;</div>"
+          }
+        },
+        {
+          "id": "CS407",
+          "type": "node",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "label": "CS 407 \n Theory of Computation",
+          "html": "<b>CS 407</b> <br/> Theory of Computation",
+          "metadata": {
+            "tooltip": "<div style=\"font-size: 14pt;\">Course: CS407&#xa;Prerequisites: CS302&#xa;Corequisites: CS407R&#xa;SU Credits: 3&#xa;ECTS Credits: 6&#xa;Science Credits: 2&#xa;Engineering Credits: 4&#xa;</div>"
+          }
+        },
+        {
+          "id": "CS408",
+          "type": "node",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "label": "CS 408 \n Computer Networks",
+          "html": "<b>CS 408</b> <br/> Computer Networks",
+          "metadata": {
+            "tooltip": "<div style=\"font-size: 14pt;\">Course: CS408&#xa;Prerequisites: CS204&#xa;Corequisites: CS408L&#xa;SU Credits: 3&#xa;ECTS Credits: 6&#xa;Science Credits: 0&#xa;Engineering Credits: 6&#xa;</div>"
+          }
+        },
+        {
+          "id": "CS411",
+          "type": "node",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "label": "CS 411 \n Cryptography",
+          "html": "<b>CS 411</b> <br/> Cryptography",
+          "metadata": {
+            "tooltip": "<div style=\"font-size: 14pt;\">Course: CS411&#xa;Prerequisites: MATH204&#xa;Corequisites: nan&#xa;SU Credits: 3&#xa;ECTS Credits: 6&#xa;Science Credits: 0&#xa;Engineering Credits: 6&#xa;</div>"
+          }
+        },
+        {
+          "id": "CS412",
+          "type": "node",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "label": "CS 412 \n Machine Learning",
+          "html": "<b>CS 412</b> <br/> Machine Learning",
+          "metadata": {
+            "tooltip": "<div style=\"font-size: 14pt;\">Course: CS412&#xa;Prerequisites: ((MATH201 OR MATH212) AND MATH203)&#xa;Corequisites: CS412R&#xa;SU Credits: 3&#xa;ECTS Credits: 6&#xa;Science Credits: 2&#xa;Engineering Credits: 4&#xa;</div>"
+          }
+        },
+        {
+          "id": "CS414",
+          "type": "node",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "label": "CS 414 \n Network Science",
+          "html": "<b>CS 414</b> <br/> Network Science",
+          "metadata": {
+            "tooltip": "<div style=\"font-size: 14pt;\">Course: CS414&#xa;Prerequisites: DSA210&#xa;Corequisites: nan&#xa;SU Credits: 3&#xa;ECTS Credits: 6&#xa;Science Credits: 0&#xa;Engineering Credits: 6&#xa;</div>"
+          }
+        },
+        {
+          "id": "EE414",
+          "type": "node",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "label": "EE 414 \n Multimedia  Communication",
+          "html": "<b>EE 414</b> <br/> Multimedia  Communication",
+          "metadata": {
+            "tooltip": "<div style=\"font-size: 14pt;\">Course: EE414&#xa;Prerequisites: CS201&#xa;Corequisites: EE414R&#xa;SU Credits: 3&#xa;ECTS Credits: 6&#xa;Science Credits: 0&#xa;Engineering Credits: 6&#xa;</div>"
+          }
+        },
+        {
+          "id": "CS415",
+          "type": "node",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "label": "CS 415 \n Introduction to deep learning",
+          "html": "<b>CS 415</b> <br/> Introduction to deep learning",
+          "metadata": {
+            "tooltip": "<div style=\"font-size: 14pt;\">Course: CS415&#xa;Prerequisites: DSA210&#xa;Corequisites: CS415L&#xa;SU Credits: 3&#xa;ECTS Credits: 6&#xa;Science Credits: 0&#xa;Engineering Credits: 6&#xa;</div>"
+          }
+        },
+        {
+          "id": "EE417",
+          "type": "node",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "label": "EE 417 \n Computer Vision",
+          "html": "<b>EE 417</b> <br/> Computer Vision",
+          "metadata": {
+            "tooltip": "<div style=\"font-size: 14pt;\">Course: EE417&#xa;Prerequisites: (CS201 OR DSA201)&#xa;Corequisites: EE417L&#xa;SU Credits: 3&#xa;ECTS Credits: 6&#xa;Science Credits: 1&#xa;Engineering Credits: 5&#xa;</div>"
+          }
+        },
+        {
+          "id": "CS419",
+          "type": "node",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "label": "CS 419 \n Digital Image and Video Analysis",
+          "html": "<b>CS 419</b> <br/> Digital Image and Video Analysis",
+          "metadata": {
+            "tooltip": "<div style=\"font-size: 14pt;\">Course: CS419&#xa;Prerequisites: NONE&#xa;Corequisites: CS419L&#xa;SU Credits: 3&#xa;ECTS Credits: 6&#xa;Science Credits: 1&#xa;Engineering Credits: 5&#xa;</div>"
+          }
+        },
+        {
+          "id": "ME425",
+          "type": "node",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "label": "ME 425 \n Autonomous Mobile Robotics",
+          "html": "<b>ME 425</b> <br/> Autonomous Mobile Robotics",
+          "metadata": {
+            "tooltip": "<div style=\"font-size: 14pt;\">Course: ME425&#xa;Prerequisites: (ENS206 OR ENS211)&#xa;Corequisites: ME425L&#xa;SU Credits: 4&#xa;ECTS Credits: 7&#xa;Science Credits: 1&#xa;Engineering Credits: 6&#xa;</div>"
+          }
+        },
+        {
+          "id": "CS432",
+          "type": "node",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "label": "CS 432 \n Computer and Network Security",
+          "html": "<b>CS 432</b> <br/> Computer and Network Security",
+          "metadata": {
+            "tooltip": "<div style=\"font-size: 14pt;\">Course: CS432&#xa;Prerequisites: (CS408 OR EE414)&#xa;Corequisites: CS432L&#xa;SU Credits: 3&#xa;ECTS Credits: 6&#xa;Science Credits: 0&#xa;Engineering Credits: 6&#xa;</div>"
+          }
+        },
+        {
+          "id": "CS435",
+          "type": "node",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "label": "CS 435 \n Quantum Programming I",
+          "html": "<b>CS 435</b> <br/> Quantum Programming I",
+          "metadata": {
+            "tooltip": "<div style=\"font-size: 14pt;\">Course: CS435&#xa;Prerequisites: ((MATH201 OR MATH212) AND IF100)&#xa;Corequisites: nan&#xa;SU Credits: 3&#xa;ECTS Credits: 6&#xa;Science Credits: 3&#xa;Engineering Credits: 3&#xa;</div>"
+          }
+        },
+        {
+          "id": "CS437",
+          "type": "node",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "label": "CS 437 \n Cybersecurity Practices and Applications",
+          "html": "<b>CS 437</b> <br/> Cybersecurity Practices and Applications",
+          "metadata": {
+            "tooltip": "<div style=\"font-size: 14pt;\">Course: CS437&#xa;Prerequisites: CS408&#xa;Corequisites: nan&#xa;SU Credits: 3&#xa;ECTS Credits: 6&#xa;Science Credits: 0&#xa;Engineering Credits: 6&#xa;</div>"
+          }
+        },
+        {
+          "id": "CS440",
+          "type": "node",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "label": "CS 440 \n Quantum Programming II",
+          "html": "<b>CS 440</b> <br/> Quantum Programming II",
+          "metadata": {
+            "tooltip": "<div style=\"font-size: 14pt;\">Course: CS440&#xa;Prerequisites: CS435&#xa;Corequisites: nan&#xa;SU Credits: 3&#xa;ECTS Credits: 6&#xa;Science Credits: 3&#xa;Engineering Credits: 3&#xa;</div>"
+          }
+        },
+        {
+          "id": "CS442",
+          "type": "node",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "label": "CS 442 \n Software Design Patterns",
+          "html": "<b>CS 442</b> <br/> Software Design Patterns",
+          "metadata": {
+            "tooltip": "<div style=\"font-size: 14pt;\">Course: CS442&#xa;Prerequisites: CS308&#xa;Corequisites: nan&#xa;SU Credits: 3&#xa;ECTS Credits: 6&#xa;Science Credits: 0&#xa;Engineering Credits: 6&#xa;</div>"
+          }
+        },
+        {
+          "id": "CS445",
+          "type": "node",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "label": "CS 445 \n Natural Language Processing",
+          "html": "<b>CS 445</b> <br/> Natural Language Processing",
+          "metadata": {
+            "tooltip": "<div style=\"font-size: 14pt;\">Course: CS445&#xa;Prerequisites: (CS204 AND DSA210)&#xa;Corequisites: nan&#xa;SU Credits: 3&#xa;ECTS Credits: 6&#xa;Science Credits: 0&#xa;Engineering Credits: 6&#xa;</div>"
+          }
+        },
+        {
+          "id": "CS447",
+          "type": "node",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "label": "CS 447 \n Immersive Systems Development",
+          "html": "<b>CS 447</b> <br/> Immersive Systems Development",
+          "metadata": {
+            "tooltip": "<div style=\"font-size: 14pt;\">Course: CS447&#xa;Prerequisites: CS300&#xa;Corequisites: nan&#xa;SU Credits: 3&#xa;ECTS Credits: 6&#xa;Science Credits: 3&#xa;Engineering Credits: 3&#xa;</div>"
+          }
+        },
+        {
+          "id": "CS449",
+          "type": "node",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "label": "CS 449 \n Human Computer Interaction",
+          "html": "<b>CS 449</b> <br/> Human Computer Interaction",
+          "metadata": {
+            "tooltip": "<div style=\"font-size: 14pt;\">Course: CS449&#xa;Prerequisites: IF100&#xa;Corequisites: nan&#xa;SU Credits: 3&#xa;ECTS Credits: 6&#xa;Science Credits: 0&#xa;Engineering Credits: 6&#xa;</div>"
+          }
+        },
+        {
+          "id": "CS455",
+          "type": "node",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "label": "CS 455 \n Large Language Models: Theoretical Foundations and Practical Applications",
+          "html": "<b>CS 455</b> <br/> Large Language Models: Theoretical Foundations and Practical Applications",
+          "metadata": {
+            "tooltip": "<div style=\"font-size: 14pt;\">Course: CS455&#xa;Prerequisites: (CS412 OR CS415)&#xa;Corequisites: nan&#xa;SU Credits: 3&#xa;ECTS Credits: 6&#xa;Science Credits: 0&#xa;Engineering Credits: 6&#xa;</div>"
+          }
+        },
+        {
+          "id": "CS460",
+          "type": "node",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "label": "CS 460 \n Automated Debugging",
+          "html": "<b>CS 460</b> <br/> Automated Debugging",
+          "metadata": {
+            "tooltip": "<div style=\"font-size: 14pt;\">Course: CS460&#xa;Prerequisites: CS300&#xa;Corequisites: nan&#xa;SU Credits: 3&#xa;ECTS Credits: 6&#xa;Science Credits: 0&#xa;Engineering Credits: 6&#xa;</div>"
+          }
+        },
+        {
+          "id": "ENS491",
+          "type": "node",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "label": "ENS 491 \n Graduation Project (Design)\n-\nNeeds min 80 SU credits",
+          "html": "<b>ENS 491</b> <br/> Graduation Project (Design)<br/>-<br/><i>Needs min 80 SU credits</i>",
+          "metadata": {
+            "tooltip": "<div style=\"font-size: 14pt;\">Course: ENS491&#xa;Prerequisites: (CS300 OR CS306 OR CS308)&#xa;Corequisites: ENS491R&#xa;SU Credits: 1&#xa;ECTS Credits: 2&#xa;Science Credits: 0&#xa;Engineering Credits: 2&#xa;</div>"
+          }
+        },
+        {
+          "id": "ENS492",
+          "type": "node",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "label": "ENS 492 \n Graduation Project  (Implementation)",
+          "html": "<b>ENS 492</b> <br/> Graduation Project  (Implementation)",
+          "metadata": {
+            "tooltip": "<div style=\"font-size: 14pt;\">Course: ENS492&#xa;Prerequisites: ENS491&#xa;Corequisites: nan&#xa;SU Credits: 3&#xa;ECTS Credits: 5&#xa;Science Credits: 0&#xa;Engineering Credits: 5&#xa;</div>"
+          }
+        },
+        {
+          "id": "CS48004",
+          "type": "node",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "label": "CS 48004 \n Special Topics in CS: Agile Software Development",
+          "html": "<b>CS 48004</b> <br/> Special Topics in CS: Agile Software Development",
+          "metadata": {
+            "tooltip": "<div style=\"font-size: 14pt;\">Course: CS48004&#xa;Prerequisites: CS308&#xa;Corequisites: nan&#xa;SU Credits: 3&#xa;ECTS Credits: 6&#xa;Science Credits: 0&#xa;Engineering Credits: 0&#xa;</div>"
+          }
+        },
+        {
+          "id": "CS48010",
+          "type": "node",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "label": "CS 48010 \n Special Topics in CS: Performance Analysis and Engineering",
+          "html": "<b>CS 48010</b> <br/> Special Topics in CS: Performance Analysis and Engineering",
+          "metadata": {
+            "tooltip": "<div style=\"font-size: 14pt;\">Course: CS48010&#xa;Prerequisites: CS300&#xa;Corequisites: nan&#xa;SU Credits: 3&#xa;ECTS Credits: 6&#xa;Science Credits: 0&#xa;Engineering Credits: 0&#xa;</div>"
+          }
+        },
+        {
+          "id": "CS48012",
+          "type": "node",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "label": "CS 48012 \n Special Topics in CS: Agentic AI Systems: Architecture and Deployment",
+          "html": "<b>CS 48012</b> <br/> Special Topics in CS: Agentic AI Systems: Architecture and Deployment",
+          "metadata": {
+            "tooltip": "<div style=\"font-size: 14pt;\">Course: CS48012&#xa;Prerequisites: CS455&#xa;Corequisites: nan&#xa;SU Credits: 3&#xa;ECTS Credits: 6&#xa;Science Credits: 0&#xa;Engineering Credits: 0&#xa;</div>"
+          }
+        },
+        {
+          "id": "61f81f2caae8eb699a99a9a39e277d3a",
+          "type": "edge",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "source": "MATH101",
+          "target": "MATH102",
+          "metadata": {
+            "tooltip": "Prerequisite for MATH102",
+            "label_position": "center",
+            "label_align": "center",
+            "source": "MATH101",
+            "target": "MATH102"
+          }
+        },
+        {
+          "id": "b6e9b4652b8c04171f6183c9cfa79c91",
+          "type": "edge",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "source": "MATH101",
+          "target": "PHYS113",
+          "metadata": {
+            "tooltip": "AND operator for (AND, MATH101, NS101)",
+            "label_position": "center",
+            "label_align": "center",
+            "source": "MATH101",
+            "target": "PHYS113"
+          }
+        },
+        {
+          "id": "ab4ddeb58f18cef2b1f4fdb9479548da",
+          "type": "edge",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "source": "NS101",
+          "target": "PHYS113",
+          "metadata": {
+            "tooltip": "AND operator for (AND, MATH101, NS101)",
+            "label_position": "center",
+            "label_align": "center",
+            "source": "NS101",
+            "target": "PHYS113"
+          }
+        },
+        {
+          "id": "aee71fb227c2bc832c687e7a8bdf83a0",
+          "type": "edge",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "source": "IF100",
+          "target": "CS201",
+          "metadata": {
+            "tooltip": "Prerequisite for CS201",
+            "label_position": "center",
+            "label_align": "center",
+            "source": "IF100",
+            "target": "CS201"
+          }
+        },
+        {
+          "id": "f8383a6b1e3db7954bf4954b4c564c02",
+          "type": "edge",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "source": "IF100",
+          "target": "DSA201",
+          "metadata": {
+            "tooltip": "Prerequisite for DSA201",
+            "label_position": "center",
+            "label_align": "center",
+            "source": "IF100",
+            "target": "DSA201"
+          }
+        },
+        {
+          "id": "769022cd2cbf4358c23c624bc77c886d",
+          "type": "edge",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "source": "MATH102",
+          "target": "MATH203",
+          "metadata": {
+            "tooltip": "Prerequisite for MATH203",
+            "label_position": "center",
+            "label_align": "center",
+            "source": "MATH102",
+            "target": "MATH203"
+          }
+        },
+        {
+          "id": "627c0520b3aee02d48c1f6a54e7054c0",
+          "type": "edge",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "source": "CS201",
+          "target": "CS204",
+          "metadata": {
+            "tooltip": "Prerequisite for CS204",
+            "label_position": "center",
+            "label_align": "center",
+            "source": "CS201",
+            "target": "CS204"
+          }
+        },
+        {
+          "id": "cac59df53076af511d64216e34ccd980",
+          "type": "edge",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "source": "MATH201",
+          "target": "ENS206",
+          "metadata": {
+            "source": "MATH201",
+            "target": "ENS206"
+          }
+        },
+        {
+          "id": "f3095f5e3eee1f3427545e0500772617",
+          "type": "edge",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "source": "MATH212",
+          "target": "ENS206",
+          "metadata": {
+            "source": "MATH212",
+            "target": "ENS206"
+          }
+        },
+        {
+          "id": "d19d7448e9f8242fcd26532ab2470012",
+          "type": "edge",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "source": "IF100",
+          "target": "DSA210",
+          "metadata": {
+            "tooltip": "AND operator for (AND, IF100, MATH203)",
+            "label_position": "center",
+            "label_align": "center",
+            "source": "IF100",
+            "target": "DSA210"
+          }
+        },
+        {
+          "id": "547a65840c14414aabb641d0de584ef9",
+          "type": "edge",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "source": "MATH203",
+          "target": "DSA210",
+          "metadata": {
+            "tooltip": "AND operator for (AND, IF100, MATH203)",
+            "label_position": "center",
+            "label_align": "center",
+            "source": "MATH203",
+            "target": "DSA210"
+          }
+        },
+        {
+          "id": "3594dd35bc9db92d83622e6091fe4e7c",
+          "type": "edge",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "source": "IF100",
+          "target": "ENS210",
+          "metadata": {
+            "tooltip": "AND operator for (AND, IF100, MATH101)",
+            "label_position": "center",
+            "label_align": "center",
+            "source": "IF100",
+            "target": "ENS210"
+          }
+        },
+        {
+          "id": "956b850249bdd081cc6ab0c015846b0b",
+          "type": "edge",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "source": "MATH101",
+          "target": "ENS210",
+          "metadata": {
+            "tooltip": "AND operator for (AND, IF100, MATH101)",
+            "label_position": "center",
+            "label_align": "center",
+            "source": "MATH101",
+            "target": "ENS210"
+          }
+        },
+        {
+          "id": "4ac57f8122dcd5b50f567a4679884477",
+          "type": "edge",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "source": "MATH101",
+          "target": "ENS211",
+          "metadata": {
+            "tooltip": "Prerequisite for ENS211",
+            "label_position": "center",
+            "label_align": "center",
+            "source": "MATH101",
+            "target": "ENS211"
+          }
+        },
+        {
+          "id": "1a13fdb300112eba1a5799a0756e6b49",
+          "type": "edge",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "source": "MATH102",
+          "target": "MATH212",
+          "metadata": {
+            "tooltip": "Prerequisite for MATH212",
+            "label_position": "center",
+            "label_align": "center",
+            "source": "MATH102",
+            "target": "MATH212"
+          }
+        },
+        {
+          "id": "7c79b0c13d012f422f3ed0bd13a174d8",
+          "type": "edge",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "source": "CS204",
+          "target": "CS300",
+          "metadata": {
+            "tooltip": "Prerequisite for CS300",
+            "label_position": "center",
+            "label_align": "center",
+            "source": "CS204",
+            "target": "CS300"
+          }
+        },
+        {
+          "id": "6fb2773e2b58bdb10f38aec45fb8aac6",
+          "type": "edge",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "source": "CS300",
+          "target": "CS301",
+          "metadata": {
+            "tooltip": "AND operator for (AND, CS300, MATH204)",
+            "label_position": "center",
+            "label_align": "center",
+            "source": "CS300",
+            "target": "CS301"
+          }
+        },
+        {
+          "id": "581f9b3effef9c30e318ff52630168fb",
+          "type": "edge",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "source": "MATH204",
+          "target": "CS301",
+          "metadata": {
+            "tooltip": "AND operator for (AND, CS300, MATH204)",
+            "label_position": "center",
+            "label_align": "center",
+            "source": "MATH204",
+            "target": "CS301"
+          }
+        },
+        {
+          "id": "fa5c5059b75932a3ed8efe01c9e15802",
+          "type": "edge",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "source": "CS204",
+          "target": "CS305",
+          "metadata": {
+            "tooltip": "Prerequisite for CS305",
+            "label_position": "center",
+            "label_align": "center",
+            "source": "CS204",
+            "target": "CS305"
+          }
+        },
+        {
+          "id": "2e53aee5da2ee8548f83e8e2d0c163c3",
+          "type": "edge",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "source": "CS204",
+          "target": "CS306",
+          "metadata": {
+            "source": "CS204",
+            "target": "CS306"
+          }
+        },
+        {
+          "id": "3446d2e83cd6fbd6a7435ce4c6c261c9",
+          "type": "edge",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "source": "DSA201",
+          "target": "CS306",
+          "metadata": {
+            "source": "DSA201",
+            "target": "CS306"
+          }
+        },
+        {
+          "id": "6175ff9ca1002310a8c72312bb8858b7",
+          "type": "edge",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "source": "MATH203",
+          "target": "MATH306",
+          "metadata": {
+            "tooltip": "Prerequisite for MATH306",
+            "label_position": "center",
+            "label_align": "center",
+            "source": "MATH203",
+            "target": "MATH306"
+          }
+        },
+        {
+          "id": "765f4c8f19ead26204d507fd2a5c95e8",
+          "type": "edge",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "source": "CS204",
+          "target": "CS307",
+          "metadata": {
+            "tooltip": "Prerequisite for CS307",
+            "label_position": "center",
+            "label_align": "center",
+            "source": "CS204",
+            "target": "CS307"
+          }
+        },
+        {
+          "id": "36a40150cfdda18b247212f913d6b3df",
+          "type": "edge",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "source": "CS204",
+          "target": "CS308",
+          "metadata": {
+            "tooltip": "Prerequisite for CS308",
+            "label_position": "center",
+            "label_align": "center",
+            "source": "CS204",
+            "target": "CS308"
+          }
+        },
+        {
+          "id": "696a6fae2ec118badecfb163c87f5057",
+          "type": "edge",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "source": "CS303",
+          "target": "EE308",
+          "metadata": {
+            "tooltip": "Prerequisite for EE308",
+            "label_position": "center",
+            "label_align": "center",
+            "source": "CS303",
+            "target": "EE308"
+          }
+        },
+        {
+          "id": "7cf4c4c2ae6acff45bd05eb9501941be",
+          "type": "edge",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "source": "IF100",
+          "target": "BIO310",
+          "metadata": {
+            "tooltip": "AND operator for (AND, IF100, MATH203)",
+            "label_position": "center",
+            "label_align": "center",
+            "source": "IF100",
+            "target": "BIO310"
+          }
+        },
+        {
+          "id": "c72c6c1c46395dbffc4c2064ebfb5d36",
+          "type": "edge",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "source": "MATH203",
+          "target": "BIO310",
+          "metadata": {
+            "tooltip": "AND operator for (AND, IF100, MATH203)",
+            "label_position": "center",
+            "label_align": "center",
+            "source": "MATH203",
+            "target": "BIO310"
+          }
+        },
+        {
+          "id": "a470ea2b13ee93e236c7515782a368ef",
+          "type": "edge",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "source": "CS204",
+          "target": "CS310",
+          "metadata": {
+            "tooltip": "Prerequisite for CS310",
+            "label_position": "center",
+            "label_align": "center",
+            "source": "CS204",
+            "target": "CS310"
+          }
+        },
+        {
+          "id": "99b60e10821130cd827ca9b7f69496d2",
+          "type": "edge",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "target": "CS400",
+          "metadata": {
+            "tooltip": "Prerequisite for CS400",
+            "label_position": "center",
+            "label_align": "center",
+            "source": "MATH204",
+            "target": "CS400"
+          }
+        },
+        {
+          "id": "b55aa32c195144691952cc4cc57f3418",
+          "type": "edge",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "source": "CS303",
+          "target": "CS401",
+          "metadata": {
+            "tooltip": "Prerequisite for CS401",
+            "label_position": "center",
+            "label_align": "center",
+            "source": "CS303",
+            "target": "CS401"
+          }
+        },
+        {
+          "id": "c4158212fe838ffe007e639da38cac55",
+          "type": "edge",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "source": "CS307",
+          "target": "CS403",
+          "metadata": {
+            "tooltip": "Prerequisite for CS403",
+            "label_position": "center",
+            "label_align": "center",
+            "source": "CS307",
+            "target": "CS403"
+          }
+        },
+        {
+          "id": "0f983ed515d44dd6483836804310f76e",
+          "type": "edge",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "source": "ENS206",
+          "target": "ME403",
+          "metadata": {
+            "tooltip": "Prerequisite for ME403",
+            "label_position": "center",
+            "label_align": "center",
+            "source": "ENS206",
+            "target": "ME403"
+          }
+        },
+        {
+          "id": "861ce4b263610128d719086587cab398",
+          "type": "edge",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "source": "CS201",
+          "target": "CS404",
+          "metadata": {
+            "source": "CS201",
+            "target": "CS404"
+          }
+        },
+        {
+          "id": "c8c1ed5ffed92a4e0312afd417bd9ca0",
+          "type": "edge",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "source": "DSA201",
+          "target": "CS404",
+          "metadata": {
+            "source": "DSA201",
+            "target": "CS404"
+          }
+        },
+        {
+          "id": "5d91693f70928e2ae13463a43a73eca1",
+          "type": "edge",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "source": "CS300",
+          "target": "CS405",
+          "metadata": {
+            "tooltip": "Prerequisite for CS405",
+            "label_position": "center",
+            "label_align": "center",
+            "source": "CS300",
+            "target": "CS405"
+          }
+        },
+        {
+          "id": "265e1c408a99c226b77cd6961b7f93b6",
+          "type": "edge",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "source": "CS300",
+          "target": "CS406",
+          "metadata": {
+            "tooltip": "Prerequisite for CS406",
+            "label_position": "center",
+            "label_align": "center",
+            "source": "CS300",
+            "target": "CS406"
+          }
+        },
+        {
+          "id": "1ece32c2bab438c2b258d4b6f296208e",
+          "type": "edge",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "source": "CS302",
+          "target": "CS407",
+          "metadata": {
+            "tooltip": "Prerequisite for CS407",
+            "label_position": "center",
+            "label_align": "center",
+            "source": "CS302",
+            "target": "CS407"
+          }
+        },
+        {
+          "id": "3d09df837cdbcc605d2cdd27c2924e6b",
+          "type": "edge",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "source": "CS204",
+          "target": "CS408",
+          "metadata": {
+            "tooltip": "Prerequisite for CS408",
+            "label_position": "center",
+            "label_align": "center",
+            "source": "CS204",
+            "target": "CS408"
+          }
+        },
+        {
+          "id": "9c60774bb02948c7ccc88190cbdea0b5",
+          "type": "edge",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "source": "MATH204",
+          "target": "CS411",
+          "metadata": {
+            "tooltip": "Prerequisite for CS411",
+            "label_position": "center",
+            "label_align": "center",
+            "source": "MATH204",
+            "target": "CS411"
+          }
+        },
+        {
+          "id": "OR__MATH201__MATH212",
+          "type": "node",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "label": "OR__MATH201__MATH212",
+          "metadata": {
+            "tooltip": "(OR, MATH201, MATH212)"
+          }
+        },
+        {
+          "id": "105035ec596763a21706b10aa079c104",
+          "type": "edge",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "source": "MATH201",
+          "target": "OR__MATH201__MATH212",
+          "metadata": {
+            "source": "MATH201",
+            "target": "OR__MATH201__MATH212"
+          }
+        },
+        {
+          "id": "23e1787ac74a1a5ab69bfc2b07bb178d",
+          "type": "edge",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "source": "MATH212",
+          "target": "OR__MATH201__MATH212",
+          "metadata": {
+            "source": "MATH212",
+            "target": "OR__MATH201__MATH212"
+          }
+        },
+        {
+          "id": "e5f8567e62c3b9e80d5ec631350254a7",
+          "type": "edge",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "source": "OR__MATH201__MATH212",
+          "target": "CS412",
+          "metadata": {
+            "tooltip": "AND operator for (AND, MATH203, (OR, MATH201, MATH212))",
+            "label_position": "center",
+            "label_align": "center",
+            "source": "OR__MATH201__MATH212",
+            "target": "CS412"
+          }
+        },
+        {
+          "id": "8a8d0c73859328bdfff94309ae3d3078",
+          "type": "edge",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "source": "MATH203",
+          "target": "CS412",
+          "metadata": {
+            "tooltip": "AND operator for (AND, MATH203, (OR, MATH201, MATH212))",
+            "label_position": "center",
+            "label_align": "center",
+            "source": "MATH203",
+            "target": "CS412"
+          }
+        },
+        {
+          "id": "a5fbccaeda2ace0a29dee7c8163a43db",
+          "type": "edge",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "source": "DSA210",
+          "target": "CS414",
+          "metadata": {
+            "tooltip": "Prerequisite for CS414",
+            "label_position": "center",
+            "label_align": "center",
+            "source": "DSA210",
+            "target": "CS414"
+          }
+        },
+        {
+          "id": "5687d2f3e9ff2803ad59a803e4ef620c",
+          "type": "edge",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "source": "CS201",
+          "target": "EE414",
+          "metadata": {
+            "tooltip": "Prerequisite for EE414",
+            "label_position": "center",
+            "label_align": "center",
+            "source": "CS201",
+            "target": "EE414"
+          }
+        },
+        {
+          "id": "2959662d7873c9eb345da36f1f8132af",
+          "type": "edge",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "source": "DSA210",
+          "target": "CS415",
+          "metadata": {
+            "tooltip": "Prerequisite for CS415",
+            "label_position": "center",
+            "label_align": "center",
+            "source": "DSA210",
+            "target": "CS415"
+          }
+        },
+        {
+          "id": "ec9d02bbbf7217c78bc2d7a1559943ae",
+          "type": "edge",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "source": "CS201",
+          "target": "EE417",
+          "metadata": {
+            "source": "CS201",
+            "target": "EE417"
+          }
+        },
+        {
+          "id": "d18bc6c5fc0250ae0ef5e8f37981da02",
+          "type": "edge",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "source": "DSA201",
+          "target": "EE417",
+          "metadata": {
+            "source": "DSA201",
+            "target": "EE417"
+          }
+        },
+        {
+          "id": "3177ac30e3083ed3081c5bb16efcefce",
+          "type": "edge",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "source": "ENS206",
+          "target": "ME425",
+          "metadata": {
+            "source": "ENS206",
+            "target": "ME425"
+          }
+        },
+        {
+          "id": "889d23e6e92e753e39f8e7cb3f1b7221",
+          "type": "edge",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "source": "ENS211",
+          "target": "ME425",
+          "metadata": {
+            "source": "ENS211",
+            "target": "ME425"
+          }
+        },
+        {
+          "id": "c16df686a22eeb19ce0bc714421b5ac0",
+          "type": "edge",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "source": "CS408",
+          "target": "CS432",
+          "metadata": {
+            "source": "CS408",
+            "target": "CS432"
+          }
+        },
+        {
+          "id": "62ef44edb680c1bbd601083134559ddc",
+          "type": "edge",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "source": "EE414",
+          "target": "CS432",
+          "metadata": {
+            "source": "EE414",
+            "target": "CS432"
+          }
+        },
+        {
+          "id": "e84f6e28435b43f6c6ffe36ff6375cb6",
+          "type": "edge",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "source": "OR__MATH201__MATH212",
+          "target": "CS435",
+          "metadata": {
+            "tooltip": "AND operator for (AND, IF100, (OR, MATH201, MATH212))",
+            "label_position": "center",
+            "label_align": "center",
+            "source": "OR__MATH201__MATH212",
+            "target": "CS435"
+          }
+        },
+        {
+          "id": "b3c57c616706d54598c1557d242c2e25",
+          "type": "edge",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "source": "IF100",
+          "target": "CS435",
+          "metadata": {
+            "tooltip": "AND operator for (AND, IF100, (OR, MATH201, MATH212))",
+            "label_position": "center",
+            "label_align": "center",
+            "source": "IF100",
+            "target": "CS435"
+          }
+        },
+        {
+          "id": "3d6df164838960bf4877a427c41fa78e",
+          "type": "edge",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "source": "CS408",
+          "target": "CS437",
+          "metadata": {
+            "tooltip": "Prerequisite for CS437",
+            "label_position": "center",
+            "label_align": "center",
+            "source": "CS408",
+            "target": "CS437"
+          }
+        },
+        {
+          "id": "df01af8097b8e33d151df8b72af3517e",
+          "type": "edge",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "source": "CS435",
+          "target": "CS440",
+          "metadata": {
+            "tooltip": "Prerequisite for CS440",
+            "label_position": "center",
+            "label_align": "center",
+            "source": "CS435",
+            "target": "CS440"
+          }
+        },
+        {
+          "id": "3b4eaaf592b8aea5ed3fed8cd18a47f9",
+          "type": "edge",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "source": "CS308",
+          "target": "CS442",
+          "metadata": {
+            "tooltip": "Prerequisite for CS442",
+            "label_position": "center",
+            "label_align": "center",
+            "source": "CS308",
+            "target": "CS442"
+          }
+        },
+        {
+          "id": "8e9acf0f34d6be1b6690e4a7a90d0bb8",
+          "type": "edge",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "source": "CS204",
+          "target": "CS445",
+          "metadata": {
+            "tooltip": "AND operator for (AND, CS204, DSA210)",
+            "label_position": "center",
+            "label_align": "center",
+            "source": "CS204",
+            "target": "CS445"
+          }
+        },
+        {
+          "id": "efac326e494032962359e3fbdbee80b2",
+          "type": "edge",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "source": "DSA210",
+          "target": "CS445",
+          "metadata": {
+            "tooltip": "AND operator for (AND, CS204, DSA210)",
+            "label_position": "center",
+            "label_align": "center",
+            "source": "DSA210",
+            "target": "CS445"
+          }
+        },
+        {
+          "id": "3e43e403b50e15e2f22b33204c78ca42",
+          "type": "edge",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "source": "CS300",
+          "target": "CS447",
+          "metadata": {
+            "tooltip": "Prerequisite for CS447",
+            "label_position": "center",
+            "label_align": "center",
+            "source": "CS300",
+            "target": "CS447"
+          }
+        },
+        {
+          "id": "1084c7dc703db17177101f8fdacbc286",
+          "type": "edge",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "source": "IF100",
+          "target": "CS449",
+          "metadata": {
+            "tooltip": "Prerequisite for CS449",
+            "label_position": "center",
+            "label_align": "center",
+            "source": "IF100",
+            "target": "CS449"
+          }
+        },
+        {
+          "id": "df715c58e495fbd50cdfd718103ab7db",
+          "type": "edge",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "source": "CS412",
+          "target": "CS455",
+          "metadata": {
+            "source": "CS412",
+            "target": "CS455"
+          }
+        },
+        {
+          "id": "84292c1b7aad971b4d9ea3ff6b99295b",
+          "type": "edge",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "source": "CS415",
+          "target": "CS455",
+          "metadata": {
+            "source": "CS415",
+            "target": "CS455"
+          }
+        },
+        {
+          "id": "14da23b3476464a08a13caa3a58d4b3c",
+          "type": "edge",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "source": "CS300",
+          "target": "CS460",
+          "metadata": {
+            "tooltip": "Prerequisite for CS460",
+            "label_position": "center",
+            "label_align": "center",
+            "source": "CS300",
+            "target": "CS460"
+          }
+        },
+        {
+          "id": "64277941b2848e7a188c48fc1eab347f",
+          "type": "edge",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "source": "CS300",
+          "target": "ENS491",
+          "metadata": {
+            "source": "CS300",
+            "target": "ENS491"
+          }
+        },
+        {
+          "id": "9167ec31f0605669ce0b47daa67f085d",
+          "type": "edge",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "source": "CS306",
+          "target": "ENS491",
+          "metadata": {
+            "source": "CS306",
+            "target": "ENS491"
+          }
+        },
+        {
+          "id": "346904177cf4f7ea918015e6b98163df",
+          "type": "edge",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "source": "CS308",
+          "target": "ENS491",
+          "metadata": {
+            "source": "CS308",
+            "target": "ENS491"
+          }
+        },
+        {
+          "id": "997288a49b14c3a90190345992a967f8",
+          "type": "edge",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "source": "ENS491",
+          "target": "ENS492",
+          "metadata": {
+            "tooltip": "Prerequisite for ENS492",
+            "label_position": "center",
+            "label_align": "center",
+            "source": "ENS491",
+            "target": "ENS492"
+          }
+        },
+        {
+          "id": "fb821b5e06b17c0c11aabc253f99782b",
+          "type": "edge",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "source": "CS308",
+          "target": "CS48004",
+          "metadata": {
+            "tooltip": "Prerequisite for CS48004",
+            "label_position": "center",
+            "label_align": "center",
+            "source": "CS308",
+            "target": "CS48004"
+          }
+        },
+        {
+          "id": "0217731c75f6c44d8954b75b43c2ef2e",
+          "type": "edge",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "source": "CS300",
+          "target": "CS48010",
+          "metadata": {
+            "tooltip": "Prerequisite for CS48010",
+            "label_position": "center",
+            "label_align": "center",
+            "source": "CS300",
+            "target": "CS48010"
+          }
+        },
+        {
+          "id": "0ef7d924960c9d727fad1f485bee864f",
+          "type": "edge",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "source": "CS455",
+          "target": "CS48012",
+          "metadata": {
+            "tooltip": "Prerequisite for CS48012",
+            "label_position": "center",
+            "label_align": "center",
+            "source": "CS455",
+            "target": "CS48012"
+          }
+        },
+        {
+          "id": "CS436",
+          "type": "node",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "label": "CS 436 \n Cloud Computing",
+          "html": "<b>CS 436</b> <br/> Cloud Computing",
+          "metadata": {
+            "tooltip": "<div style=\"font-size: 14pt;\">Course: CS436&#xa;Prerequisites: NONE&#xa;Corequisites: nan&#xa;SU Credits: 3&#xa;ECTS Credits: 6&#xa;Science Credits: 0&#xa;Engineering Credits: 6&#xa;</div>"
+          }
+        },
+        {
+          "id": "CS48011",
+          "type": "node",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "label": "CS 48011 \n Special Topics in CS: Evolution and Biology for Artificial Intelligence",
+          "html": "<b>CS 48011</b> <br/> Special Topics in CS: Evolution and Biology for Artificial Intelligence",
+          "metadata": {
+            "tooltip": "<div style=\"font-size: 14pt;\">Course: CS48011&#xa;Prerequisites: NONE&#xa;Corequisites: nan&#xa;SU Credits: 3&#xa;ECTS Credits: 6&#xa;Science Credits: 0&#xa;Engineering Credits: 0&#xa;</div>"
+          }
+        },
+        {
+          "id": "BSCS_LEGEND_BOX",
+          "type": "node",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "label": "BSCS_LEGEND_BOX"
+        },
+        {
+          "id": "BSCS_LEGEND_HEADER",
+          "type": "node",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "label": "Color Legend",
+          "html": "<b>Color Legend</b>"
+        },
+        {
+          "id": "BSCS_LEGEND_UNIVERSITY",
+          "type": "node",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "label": "University\nCourses"
+        },
+        {
+          "id": "BSCS_LEGEND_REQUIRED",
+          "type": "node",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "label": "Required\nCourses"
+        },
+        {
+          "id": "BSCS_LEGEND_CORE",
+          "type": "node",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "label": "Core\nCourses"
+        },
+        {
+          "id": "BSCS_LEGEND_AREA",
+          "type": "node",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "label": "Area\nCourses"
+        },
+        {
+          "id": "BSCS_LEGEND_OTHER",
+          "type": "node",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "label": "Other\nCourses"
+        },
+        {
+          "id": "BSCS_LEGEND_EDGE_AND_SRC",
+          "type": "node",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "label": "BSCS_LEGEND_EDGE_AND_SRC"
+        },
+        {
+          "id": "BSCS_LEGEND_EDGE_AND_TGT",
+          "type": "node",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "label": "BSCS_LEGEND_EDGE_AND_TGT"
+        },
+        {
+          "id": "b314ea480af5582cbb44282b330244a9",
+          "type": "edge",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "source": "BSCS_LEGEND_EDGE_AND_SRC",
+          "target": "BSCS_LEGEND_EDGE_AND_TGT",
+          "label": "AND",
+          "metadata": {
+            "source": "BSCS_LEGEND_EDGE_AND_SRC",
+            "target": "BSCS_LEGEND_EDGE_AND_TGT"
+          }
+        },
+        {
+          "id": "BSCS_LEGEND_EDGE_OR_SRC",
+          "type": "node",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "label": "BSCS_LEGEND_EDGE_OR_SRC"
+        },
+        {
+          "id": "BSCS_LEGEND_EDGE_OR_TGT",
+          "type": "node",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "label": "BSCS_LEGEND_EDGE_OR_TGT"
+        },
+        {
+          "id": "aa81de97aa7551c12454aef1db305513",
+          "type": "edge",
+          "parent": "cwJpv3BAN5XKX392M1sE-2",
+          "source": "BSCS_LEGEND_EDGE_OR_SRC",
+          "target": "BSCS_LEGEND_EDGE_OR_TGT",
+          "label": "OR",
+          "metadata": {
+            "source": "BSCS_LEGEND_EDGE_OR_SRC",
+            "target": "BSCS_LEGEND_EDGE_OR_TGT"
+          }
+        },
+        {
+          "id": "PROJ201",
+          "type": "node",
+          "parent": "1",
+          "label": "PROJ 201 \n Undergraduate Project Course",
+          "html": "<b>PROJ 201</b> <br/> Undergraduate Project Course",
+          "metadata": {
+            "tooltip": "<div style=\"font-size: 14pt;\">Course: PROJ201&#xa;Prerequisites: NONE&#xa;Corequisites: nan&#xa;SU Credits: 1&#xa;ECTS Credits: 1&#xa;Science Credits: 0&#xa;Engineering Credits: 1&#xa;</div>"
+          }
+        },
+        {
+          "id": "CS395",
+          "type": "node",
+          "parent": "1",
+          "label": "CS 395 \n Internship Project\n-\nNeeds min 64 SU credits",
+          "html": "<b>CS 395</b> <br/> Internship Project<br/>-<br/><i>Needs min 64 SU credits</i>",
+          "metadata": {
+            "tooltip": "<div style=\"font-size: 14pt;\">Course: CS395&#xa;Prerequisites: PROJ201&#xa;Corequisites: nan&#xa;SU Credits: 0&#xa;ECTS Credits: 5&#xa;Science Credits: 0&#xa;Engineering Credits: 5&#xa;</div>"
+          }
+        },
+        {
+          "id": "27be1512400eaf282d69e8a68f98d796",
+          "type": "edge",
+          "parent": "1",
+          "source": "PROJ201",
+          "target": "CS395",
+          "metadata": {
+            "tooltip": "Prerequisite for CS395",
+            "label_position": "center",
+            "label_align": "center",
+            "source": "PROJ201",
+            "target": "CS395"
+          }
+        },
+        {
+          "id": "CS438",
+          "type": "node",
+          "parent": "1",
+          "label": "CS 438 \n Blockchain: Security and Applications",
+          "html": "<b>CS 438</b> <br/> Blockchain: Security and Applications",
+          "metadata": {
+            "tooltip": "<div style=\"font-size: 14pt;\">Course: CS438&#xa;Prerequisites: NONE&#xa;Corequisites: nan&#xa;SU Credits: 3&#xa;ECTS Credits: 6&#xa;Science Credits: 0&#xa;Engineering Credits: 6&#xa;</div>"
+          }
+        },
+        {
+          "id": "CS48006",
+          "type": "node",
+          "parent": "1",
+          "label": "CS 48006 \n Special Topics in CS: Decentralized Finance",
+          "html": "<b>CS 48006</b> <br/> Special Topics in CS: Decentralized Finance",
+          "metadata": {
+            "tooltip": "<div style=\"font-size: 14pt;\">Course: CS48006&#xa;Prerequisites: CS438&#xa;Corequisites: nan&#xa;SU Credits: 3&#xa;ECTS Credits: 6&#xa;Science Credits: 0&#xa;Engineering Credits: 0&#xa;</div>"
+          }
+        },
+        {
+          "id": "e809c2a953ae77bc9c142ba49a21fde9",
+          "type": "edge",
+          "parent": "1",
+          "source": "CS438",
+          "target": "CS48006",
+          "metadata": {
+            "tooltip": "Prerequisite for CS48006",
+            "label_position": "center",
+            "label_align": "center",
+            "source": "CS438",
+            "target": "CS48006"
+          }
+        },
+        {
+          "id": "CS48008",
+          "type": "node",
+          "parent": "1",
+          "label": "CS 48008 \n Special Topics in CS: Malware Analysis and Detection",
+          "html": "<b>CS 48008</b> <br/> Special Topics in CS: Malware Analysis and Detection",
+          "metadata": {
+            "tooltip": "<div style=\"font-size: 14pt;\">Course: CS48008&#xa;Prerequisites: CS408&#xa;Corequisites: nan&#xa;SU Credits: 3&#xa;ECTS Credits: 6&#xa;Science Credits: 0&#xa;Engineering Credits: 0&#xa;</div>"
+          }
+        },
+        {
+          "id": "a324b39f473d098f7cec5f965b0daaaa",
+          "type": "edge",
+          "parent": "1",
+          "source": "CS408",
+          "target": "CS48008",
+          "metadata": {
+            "tooltip": "Prerequisite for CS48008",
+            "label_position": "center",
+            "label_align": "center",
+            "source": "CS408",
+            "target": "CS48008"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>__TITLE__</title>
+<style>
+  :root { --ink:#31333f; --muted:#6b7280; --line:#c8ccd6; }
+  * { box-sizing: border-box; }
+  body { margin:0; font:14px/1.4 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; color:var(--ink); background:#fbfbfd; }
+  header { padding:14px 18px; border-bottom:1px solid #e3e5ec; background:#fff; position:sticky; top:0; z-index:5; }
+  h1 { margin:0 0 4px; font-size:17px; }
+  header p { margin:0; color:var(--muted); font-size:12px; }
+  .legend { display:flex; flex-wrap:wrap; gap:12px; margin-top:8px; }
+  .legend span { display:inline-flex; align-items:center; gap:6px; font-size:12px; color:var(--muted); }
+  .swatch { width:13px; height:13px; border-radius:3px; border:1px solid #0002; display:inline-block; }
+  #stage { overflow:hidden; cursor:grab; height:calc(100vh - 116px); }
+  #stage.dragging { cursor:grabbing; }
+  svg { display:block; }
+  .node rect { stroke:#0002; stroke-width:1; rx:6; }
+  .node text { font-size:12px; pointer-events:none; }
+  .node .code { font-weight:700; font-size:12.5px; }
+  .node .name { fill:#5b5f6d; }
+  .node .note { fill:#a2551f; font-style:italic; font-size:10.5px; }
+  .node .note-title { font-weight:700; font-size:12.5px; fill:#7a5a00; }
+  .node .note-body { font-size:11px; fill:#6a5a22; }
+  .node .season { font-size:10.5px; font-weight:600; }
+  .node rect.note-bg { stroke:#e2cf7a; }
+  .edge { fill:none; stroke-width:1.6; }
+  .edge.and { stroke:#3b6fd4; }
+  .edge.or { stroke:#d98324; stroke-dasharray:5 3; }
+  .edge.plain { stroke:#98a0b3; }
+  .edge-lbl { font-size:9px; fill:#8a90a0; }
+  #tip { position:fixed; pointer-events:none; opacity:0; transition:opacity .1s; background:#fff;
+         border:1px solid #dfe2ea; border-radius:8px; box-shadow:0 6px 22px #0000001f; padding:10px 12px;
+         max-width:360px; font-size:12px; z-index:20; }
+  #tip b { color:#1f2430; }
+</style>
+</head>
+<body>
+<header>
+  <h1>__TITLE__</h1>
+  <p>Prerequisite map generated from the Sabancı University course catalog. Solid blue edges are AND prerequisites, dashed orange edges are OR, grey edges are single prerequisites. Scroll to zoom, drag to pan. __NAV__</p>
+  <div class="legend" id="legend"></div>
+</header>
+<div id="stage"><svg id="canvas"></svg></div>
+<div id="tip"></div>
+<script id="graph" type="application/json">__GRAPH_JSON__</script>
+<script>
+const graph = JSON.parse(document.getElementById('graph').textContent);
+const cells = graph.pages[0].cells;
+const nodes = cells.filter(c => c.type === 'node' && !c.id.includes('LEGEND'));
+const edges = cells.filter(c => c.type === 'edge' && !String(c.source).includes('LEGEND'));
+const byId = Object.fromEntries(nodes.map(n => [n.id, n]));
+
+// ---- layout: longest-path depth, so a course always sits right of its prereqs
+const preds = {}, depth = {};
+edges.forEach(e => { if (byId[e.source] && byId[e.target]) (preds[e.target] ||= []).push(e.source); });
+function depthOf(id, seen = new Set()) {
+  if (id in depth) return depth[id];
+  if (seen.has(id)) return 0;
+  seen.add(id);
+  const p = (preds[id] || []).filter(x => byId[x]);
+  depth[id] = p.length ? 1 + Math.max(...p.map(x => depthOf(x, seen))) : 0;
+  return depth[id];
+}
+nodes.forEach(n => depthOf(n.id));
+
+const catRank = {};
+const catColor = {};
+nodes.forEach(n => {
+  const m = n.metadata || {};
+  if (m.category) { catColor[m.category] = m.color; if (!(m.category in catRank)) catRank[m.category] = Object.keys(catRank).length; }
+});
+const catOrder = Object.keys(catRank);
+const layers = [];
+nodes.forEach(n => (layers[depth[n.id]] ||= []).push(n));
+layers.forEach(l => l.sort((a, b) => {
+  const ca = catRank[(a.metadata || {}).category] ?? 99, cb = catRank[(b.metadata || {}).category] ?? 99;
+  return ca - cb || a.id.localeCompare(b.id);
+}));
+
+// barycentre sweeps: pull each node toward the average of its neighbours to cut crossings
+const succs = {};
+edges.forEach(e => { if (byId[e.source] && byId[e.target]) (succs[e.source] ||= []).push(e.target); });
+const slot = {};
+function reseat() { layers.forEach(l => l.forEach((n, i) => { slot[n.id] = i; })); }
+function sweep(useSucc) {
+  reseat();
+  const order = useSucc ? [...layers.keys()].reverse() : [...layers.keys()];
+  order.forEach(i => {
+    layers[i].sort((a, b) => bary(a, useSucc, i) - bary(b, useSucc, i));
+    reseat();
+  });
+}
+function bary(n, useSucc, layer) {
+  const nb = (useSucc ? succs[n.id] : preds[n.id]) || [];
+  const want = layer + (useSucc ? 1 : -1);
+  const same = nb.filter(x => byId[x] && depth[x] === want);
+  if (!same.length) return slot[n.id];
+  return same.reduce((s, x) => s + slot[x], 0) / same.length;
+}
+for (let i = 0; i < 3; i++) { sweep(false); sweep(true); }
+reseat();
+
+// notes float to the top of their column and are drawn as wide sticky boxes
+layers.forEach(l => {
+  const order = new Map(nodes.map((n, i) => [n.id, i]));
+  const notes = l.filter(n => (n.metadata || {}).kind === 'note').sort((a, b) => order.get(a.id) - order.get(b.id));
+  if (notes.length) l.splice(0, l.length, ...notes, ...l.filter(n => (n.metadata || {}).kind !== 'note'));
+});
+const isNote = n => (n.metadata || {}).kind === 'note';
+const linesOf = n => String(n.label || '').split('\n').map(s => s.trim()).filter(Boolean);
+const size = n => isNote(n)
+  ? { w: 560, h: 26 + linesOf(n).length * 15 }
+  : { w: 236, h: hasNoteLine(n) ? 68 : 54 };
+function hasNoteLine(n) {
+  const parts = linesOf(n);
+  return parts[3] === '-' && !!parts[4];
+}
+const SEASON_TEXT = {
+  'Fall': '#a86400',
+  'Spring': '#2f7a2f',
+  'Fall & Spring': '#2c5fa8',
+  'Not offered recently': '#a33a3a',
+};
+
+const GX = 130, GY = 16, PAD = 40;
+let x = PAD;
+const layerX = layers.map(l => { const at = x; x += Math.max(...l.map(n => size(n).w)) + GX; return at; });
+let pos = {};
+layers.forEach((l, i) => {
+  let y = PAD;
+  l.forEach(n => { pos[n.id] = { x: layerX[i], y }; y += size(n).h + GY; });
+});
+const W = x - GX + PAD;
+const H = Math.max(...layers.map(l => l.reduce((s, n) => s + size(n).h + GY, 0))) + PAD * 2;
+
+// ---- render
+const svg = document.getElementById('canvas');
+svg.setAttribute('width', W); svg.setAttribute('height', H);
+svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
+const NS = 'http://www.w3.org/2000/svg';
+const el = (t, a) => { const e = document.createElementNS(NS, t); for (const k in a) e.setAttribute(k, a[k]); return e; };
+
+const defs = el('defs');
+defs.innerHTML = `<marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#98a0b3"/></marker>`;
+svg.appendChild(defs);
+
+const gEdges = el('g'), gNodes = el('g');
+svg.append(gEdges, gNodes);
+
+function edgeKind(e) {
+  const t = (e.metadata || {}).tooltip || '';
+  if (t.startsWith('AND')) return 'and';
+  if (t.startsWith('OR')) return 'or';
+  return 'plain';
+}
+edges.forEach(e => {
+  const a = pos[e.source], b = pos[e.target];
+  if (!a || !b) return;
+  const sa = size(byId[e.source]), sb = size(byId[e.target]);
+  const x1 = a.x + sa.w, y1 = a.y + sa.h / 2, x2 = b.x, y2 = b.y + sb.h / 2;
+  const path = el('path', { class: `edge ${edgeKind(e)}`, 'marker-end': 'url(#arrow)',
+    d: `M ${x1} ${y1} C ${x1 + Math.max(60, (x2 - x1) * 0.5)} ${y1}, ${x2 - Math.max(60, (x2 - x1) * 0.5)} ${y2}, ${x2} ${y2}` });
+  const ttl = el('title');
+  ttl.textContent = (e.metadata || {}).tooltip || `${e.source} → ${e.target}`;
+  path.appendChild(ttl);
+  gEdges.appendChild(path);
+});
+
+nodes.forEach(n => {
+  const p = pos[n.id], m = n.metadata || {};
+  const s = size(n);
+  const g = el('g', { class: 'node', transform: `translate(${p.x},${p.y})` });
+  g.appendChild(el('rect', {
+    class: isNote(n) ? 'note-bg' : '', width: s.w, height: s.h, fill: m.color || '#eef0f5',
+  }));
+  const parts = linesOf(n);
+  if (isNote(n)) {
+    parts.forEach((line, i) => {
+      const t = el('text', { x: 14, y: 20 + i * 15, class: i ? 'note-body' : 'note-title' });
+      t.textContent = line;
+      g.appendChild(t);
+    });
+    gNodes.appendChild(g);
+    return;
+  }
+  const code = parts[0] || n.id;
+  const name = (parts[1] || '').slice(0, 34) + ((parts[1] || '').length > 34 ? '…' : '');
+  const season = parts[2] || '';
+  const note = parts[3] === '-' ? (parts[4] || '') : (parts[3] || '');
+  if (m.season_color) g.appendChild(el('rect', { x: 0, y: 0, width: 5, height: s.h, rx: 2.5, fill: m.season_color }));
+  const t1 = el('text', { x: 10, y: 18, class: 'code' }); t1.textContent = code;
+  const t2 = el('text', { x: 10, y: 33, class: 'name' }); t2.textContent = name;
+  g.append(t1, t2);
+  if (season) {
+    const t = el('text', { x: 10, y: 47, class: 'season', fill: SEASON_TEXT[season] || '#5b5f6d' });
+    t.textContent = season;
+    g.appendChild(t);
+  }
+  if (note) { const t3 = el('text', { x: 10, y: 61, class: 'note' }); t3.textContent = note.slice(0, 40); g.appendChild(t3); }
+  const ttl = el('title');
+  ttl.textContent = String(m.tooltip || '').replace(/<[^>]+>/g, ' ').replace(/&#xa;|\n/g, '\n').replace(/[ \t]+/g, ' ').trim();
+  g.appendChild(ttl);
+  gNodes.appendChild(g);
+});
+
+// ---- legend
+const legendBox = document.getElementById('legend');
+catOrder.forEach(c => {
+  const s = document.createElement('span');
+  s.innerHTML = `<i class="swatch" style="background:${catColor[c]}"></i>${c}`;
+  legendBox.appendChild(s);
+});
+Object.entries(SEASON_TEXT).forEach(([season, ink]) => {
+  const swatch = nodes.find(n => (n.metadata || {}).season === season);
+  const s = document.createElement('span');
+  s.innerHTML = `<i class="swatch" style="background:${swatch ? swatch.metadata.season_color : ink}"></i>`
+    + `${season === 'Not offered recently' ? 'Not offered in the last 4 years' : 'Offered in ' + season}`;
+  legendBox.appendChild(s);
+});
+
+// ---- pan / zoom
+const stage = document.getElementById('stage');
+let scale = 1, tx = 0, ty = 0, drag = null;
+function apply() { svg.style.transform = `translate(${tx}px,${ty}px) scale(${scale})`; svg.style.transformOrigin = '0 0'; }
+stage.addEventListener('wheel', ev => {
+  ev.preventDefault();
+  const next = Math.min(2.5, Math.max(0.25, scale * (ev.deltaY < 0 ? 1.1 : 0.9)));
+  const r = stage.getBoundingClientRect();
+  const mx = ev.clientX - r.left, my = ev.clientY - r.top;
+  tx = mx - (mx - tx) * (next / scale); ty = my - (my - ty) * (next / scale);
+  scale = next; apply();
+}, { passive: false });
+stage.addEventListener('pointerdown', ev => { drag = { x: ev.clientX - tx, y: ev.clientY - ty }; stage.classList.add('dragging'); stage.setPointerCapture(ev.pointerId); });
+stage.addEventListener('pointermove', ev => { if (!drag) return; tx = ev.clientX - drag.x; ty = ev.clientY - drag.y; apply(); });
+stage.addEventListener('pointerup', () => { drag = null; stage.classList.remove('dragging'); });
+apply();
+</script>
+</body>
+</html>
