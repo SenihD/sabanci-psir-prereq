@@ -131,6 +131,7 @@ def main():
                 ),
                 "prereq": rec.get("prerequisite"),
                 "prereq_text": bg.expr_to_text(rec.get("prerequisite")),
+                "prereq_credits": rec.get("prerequisite_credits"),
             }
         )
 

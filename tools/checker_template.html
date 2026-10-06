@@ -101,6 +101,32 @@ footer a { color:var(--accent); } .sr-only { position:absolute; width:1px; heigh
 @media(max-width:420px) { .dashboard,main { padding-left:16px; padding-right:16px; } .metric .label { font-size:9px; letter-spacing:.06em; } .name { white-space:normal; } .topline { align-items:start; } nav { flex-direction:column; gap:4px; } }
 @media(prefers-reduced-motion:reduce) { * { transition:none!important; } }
 
+
+.planner { max-width:1408px; margin:24px auto 0; padding:0 24px; }
+.planner-shell { background:#e9eee4; border:1px solid #d9e2d4; border-radius:20px; padding:24px; }
+.planner-heading { display:flex; justify-content:space-between; align-items:start; gap:20px; flex-wrap:wrap; }
+.planner-heading h2 { font:28px Georgia,serif; margin:0 0 8px; }
+.planner-heading p { max-width:720px; margin:0; }
+.planner-controls { display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin:20px 0; }
+.planner-controls input, .planner-controls select, .course-plan { font:inherit; border:1px solid var(--line); border-radius:8px; padding:8px; background:white; color:var(--ink); }
+.planner-controls input { width:90px; } .term-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; }
+.term { min-width:0; border:1px solid #dce4d8; border-radius:14px; background:#fff; padding:16px; }
+.term.drop-over { border:2px solid var(--accent); background:#f2f8ee; padding:15px; }
+.term h3 { font-size:15px; margin:0; } .term-header { display:flex; justify-content:space-between; gap:8px; }
+.term-summary { font-size:11px; color:var(--muted); margin:6px 0 14px; }
+.plan-course { border:1px solid var(--line); background:#f9faf6; border-radius:10px; padding:12px; margin-top:10px; cursor:grab; }
+.plan-course strong { display:block; font-size:12px; } .plan-course .plan-name { display:block; font-size:11px; color:var(--muted); }
+.plan-actions { display:flex; gap:6px; margin-top:9px; align-items:center; }
+.plan-actions select { min-width:0; width:100%; font:inherit; font-size:11px; padding:5px; border:1px solid var(--line); border-radius:6px; background:#fff; }
+.plan-actions button, .term-header button { font-size:11px; padding:4px 8px; }
+.plan-warning { color:#855421; background:#fff2d8; border-radius:7px; padding:8px; font-size:11px; margin:8px 0 0; }
+.plan-danger { color:#934f39; background:#fae9e0; } .drop-hint { border:1px dashed #cfdbcc; border-radius:8px; font-size:12px; color:var(--muted); padding:18px 12px; margin:12px 0 0; text-align:center; }
+.course-plan { flex:none; max-width:132px; font-size:10px; padding:6px; } .row[draggable=true] { cursor:grab; } .planner-note { margin:16px 0 0; font-size:11px; color:var(--muted); }
+#plan-status { font-size:12px; color:var(--ok); margin:8px 0 0; min-height:20px; }
+@media(max-width:1100px) { .term-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+@media(max-width:800px) { .planner { padding:0 24px; } .planner-shell { padding:18px; } .term-grid { grid-template-columns:1fr; } .course-plan { margin-left:31px; max-width:190px; } }
+@media(max-width:420px) { .planner { padding:0 16px; } }
+
 </style>
 </head>
 <body>
@@ -116,6 +142,12 @@ footer a { color:var(--accent); } .sr-only { position:absolute; width:1px; heigh
   <div class="metric"><span class="label">ECTS credits</span><strong id="ects-total">0</strong><small>of 240 required</small><div class="bar"><i id="ects-bar"></i></div></div>
   <div class="metric"><span class="label">Requirements met</span><strong id="req-total">0</strong><small id="req-caption"></small><div class="bar"><i id="req-bar"></i></div></div>
 </div>
+<section class="planner" aria-labelledby="planner-title"><div class="planner-shell">
+<div class="planner-heading"><div><h2 id="planner-title">Make room for what’s next.</h2><p class="help">Build your semester plan. Drag a course into a semester, or use its semester menu. Completed courses count as already taken; planned courses count only in later semesters.</p></div></div>
+<div class="planner-controls"><label for="plan-year">Year</label><input id="plan-year" type="number" min="2000" max="2100" value="2026" /><label for="plan-season">Semester</label><select id="plan-season"><option>Fall</option><option>Spring</option></select><button id="add-term" type="button">Add semester +</button></div>
+<div id="term-grid" class="term-grid"></div><p id="plan-status" role="status" aria-live="polite"></p>
+<p class="planner-note">Offering warnings reflect historical Fall/Spring patterns, not confirmed future schedules. Planned courses do not count as completed in the graduation checker. Your plan is saved in this browser.</p>
+</div></section>
 <main>
   <section><div class="section-title"><h2>Your courses</h2><span class="help">Saved in this browser</span></div>
 <div class="tools"><label class="sr-only" for="filter">Search courses</label><input id="filter" type="search" placeholder="Search by code or course name…" /><button id="clear">Reset selections</button></div><p class="help">Select completed courses. An asterisk marks a mandatory university course.</p><div id="checklist"></div></section>
@@ -148,6 +180,51 @@ const D = JSON.parse(document.getElementById('data').textContent);
 const BY_CODE = Object.fromEntries(D.courses.map(c => [c.code, c]));
 const taken = new Set();
 const manual = { free: 0, fcExtra: 0 };
+const defaultTerms = () => Array.from({length:6}, (_,i) => ({id:`${2026 + Math.ceil(i/2)}-${i%2 ? 'Spring':'Fall'}`, year:2026 + Math.ceil(i/2), season:i%2 ? 'Spring':'Fall'}));
+let plan = { terms:defaultTerms(), assignments:{} };
+const termOrder = t => t.year * 2 + (t.season === 'Fall' ? 1 : 0);
+const escapeHtml = value => String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+function savePlan() { try { localStorage.setItem('bapsir-plan-v1', JSON.stringify(plan)); } catch(e) {} }
+function plannedCourses(termId) { return D.courses.filter(c => !taken.has(c.code) && plan.assignments[c.code] === termId); }
+function availableBefore(term) {
+  const available = new Set(taken);
+  for (const c of D.courses) {
+    const previous = plan.terms.find(t => t.id === plan.assignments[c.code]);
+    if (previous && termOrder(previous) < termOrder(term)) available.add(c.code);
+  }
+  return available;
+}
+function satisfiedBy(expr, available) {
+  if (!expr) return true;
+  if (typeof expr === 'string') return available.has(expr.replace(/\s+/g,''));
+  return expr.op === 'and' ? expr.args.every(e => satisfiedBy(e,available)) : expr.args.some(e => satisfiedBy(e,available));
+}
+function planningWarnings(c, term) {
+  const warnings=[];
+  const available=availableBefore(term);
+  if (!satisfiedBy(c.prereq, available)) warnings.push({kind:'danger',text:`Prerequisite not completed before this semester: ${c.prereq_text}. Courses in the same semester do not satisfy a prerequisite.`});
+  const credits = sum(D.courses.filter(x => available.has(x.code)), 'credits') + manual.free;
+  if (c.prereq_credits && credits < c.prereq_credits) warnings.push({kind:'danger', text:`Credit prerequisite: ${c.prereq_credits} SU credits required before this semester; ${credits} entered or planned earlier.`});
+  if ((c.season === 'Spring' && term.season === 'Fall') || (c.season === 'Fall' && term.season === 'Spring')) warnings.push({kind:'season', text:`Usually offered in ${c.season}; not usually offered in ${term.season}. Check the published schedule.`});
+  if (c.season === 'Not offered recently') warnings.push({kind:'season',text:'Not offered recently. Confirm availability before relying on this course.'});
+  if (!c.season) warnings.push({kind:'season',text:'Offering pattern unavailable. Check the published schedule.'});
+  return warnings;
+}
+function termOptions(code) {
+  return '<option value="">Not planned</option>' + [...plan.terms].sort((a,b)=>termOrder(a)-termOrder(b)).map(t => `<option value="${t.id}" ${plan.assignments[code]===t.id ? 'selected':''}>${t.season} ${t.year}</option>`).join('');
+}
+function assignCourse(code, termId) {
+  if (!BY_CODE[code] || taken.has(code) || (termId && !plan.terms.some(t => t.id === termId))) return;
+  if (termId) plan.assignments[code] = termId; else delete plan.assignments[code];
+  savePlan(); render();
+  document.getElementById('plan-status').textContent = termId ? `${code} moved to ${termId.replace('-', ' ')}. Review any warnings on its card.` : `${code} removed from the plan.`;
+}
+function renderPlan() {
+  document.getElementById('term-grid').innerHTML=[...plan.terms].sort((a,b)=>termOrder(a)-termOrder(b)).map(t => {
+    const courses=plannedCourses(t.id);
+    return `<section class="term" data-term="${t.id}" aria-label="${t.season} ${t.year}"><div class="term-header"><h3>${t.season} ${t.year}</h3><button type="button" data-remove-term="${t.id}" aria-label="Remove ${t.season} ${t.year}">×</button></div><p class="term-summary">${courses.length} courses · ${sum(courses,'credits')} SU · ${sum(courses,'ects')} ECTS</p>${courses.map(c => `<article class="plan-course" draggable="true" data-drag-code="${c.code}"><strong>${escapeHtml(c.code.replace(/([A-Z]+)(\d)/,'$1 $2'))}</strong><span class="plan-name">${escapeHtml(c.name)}</span>${planningWarnings(c,t).map(w => `<p class="plan-warning ${w.kind==='danger'?'plan-danger':''}">${escapeHtml(w.text)}</p>`).join('')}<div class="plan-actions"><select data-plan-code="${c.code}" aria-label="Move ${c.code} to semester">${termOptions(c.code)}</select><button type="button" data-unplan="${c.code}" aria-label="Remove ${c.code} from plan">×</button></div></article>`).join('')}${!courses.length ? '<p class="drop-hint">Drop a course here<br>or choose this semester in the course list.</p>' : ''}</section>`;
+  }).join('') || '<p class="help">Add a semester above to start planning.</p>';
+}
 
 // Faculty-course areas: SSBF's six areas plus MDBF and YBF.
 const AREA = {
@@ -283,18 +360,21 @@ function render() {
       <h2>${g.title} <small>${g.tr ? g.tr + ' · ' : ''}${head}</small></h2>
       <div class="rule">${g.rule}</div>
       ${items.map(c => `
-        <label class="row${taken.has(c.code) ? ' done' : ''}">
-          <input type="checkbox" data-code="${c.code}" ${taken.has(c.code) ? 'checked' : ''} />
+        <div class="row${taken.has(c.code) ? ' done' : ''}" ${taken.has(c.code) ? '' : `draggable="true" data-drag-code="${c.code}"`}>
+          <label class="sr-only" for="course-${c.code}">${escapeHtml(c.code + ' ' + c.name)}</label>
+          <input id="course-${c.code}" type="checkbox" data-code="${c.code}" ${taken.has(c.code) ? 'checked' : ''} />
           <span class="code">${c.code.replace(/([A-Z]+)(\d)/, '$1 $2')}</span>
           <span class="name" title="${c.name}">${c.name}${c.mandatory ? ' <b title="mandatory">*</b>' : ''}</span>
           <span class="meta">
             <span class="chip ${CHIP[c.season] || ''}">${c.season === 'Not offered recently' ? 'not recent' : c.season}</span>
             <span>${c.credits} SU · ${c.ects} ECTS</span>
           </span>
-        </label>`).join('')}
+          ${taken.has(c.code) ? '' : `<select class="course-plan" data-plan-code="${c.code}" aria-label="Plan ${c.code} semester">${termOptions(c.code)}</select>`}
+        </div>`).join('')}
     </div>`;
   }).join('') || '<div class="empty">No courses match your search. Try a different code or name.</div>';
 
+  renderPlan();
   const { reqs, issues, totalCredits, totalEcts, takenCount } = evaluate();
   document.getElementById('requirements').innerHTML = reqs.map(r => `
     <div class="req">
@@ -336,6 +416,44 @@ function init() {
     document.getElementById('fcextra').value = manual.fcExtra;
   } catch (e) { /* first visit */ }
 
+  try {
+    const savedPlan = JSON.parse(localStorage.getItem('bapsir-plan-v1') || 'null');
+    if (savedPlan && Array.isArray(savedPlan.terms) && savedPlan.assignments && typeof savedPlan.assignments === 'object') {
+      const ids = new Set();
+      plan.terms = savedPlan.terms.filter(t => t && Number.isInteger(t.year) && t.year>=2000 && t.year<=2100 && ['Fall','Spring'].includes(t.season) && t.id===`${t.year}-${t.season}` && !ids.has(t.id) && ids.add(t.id));
+      plan.assignments = Object.fromEntries(Object.entries(savedPlan.assignments).filter(([code,id]) => BY_CODE[code] && ids.has(id) && !taken.has(code)));
+    }
+  } catch(e) {}
+  document.getElementById('add-term').addEventListener('click', () => {
+    const year = Number(document.getElementById('plan-year').value);
+    const season = document.getElementById('plan-season').value;
+    if (!Number.isInteger(year) || year<2000 || year>2100) { document.getElementById('plan-status').textContent='Enter a year between 2000 and 2100.'; return; }
+    const id=`${year}-${season}`;
+    if (plan.terms.some(t => t.id===id)) { document.getElementById('plan-status').textContent='That semester is already in your plan.'; return; }
+    plan.terms.push({id,year,season}); savePlan(); render();
+  });
+  document.addEventListener('click', ev => {
+    const remove=ev.target.closest('[data-unplan]');
+    if (remove) assignCourse(remove.dataset.unplan,'');
+    const termButton=ev.target.closest('[data-remove-term]');
+    if (termButton) {
+      const id=termButton.dataset.removeTerm;
+      if (plannedCourses(id).length && !confirm('Remove this semester and unplan its courses?')) return;
+      plan.terms=plan.terms.filter(t => t.id!==id);
+      for (const code of Object.keys(plan.assignments)) if (plan.assignments[code]===id) delete plan.assignments[code];
+      savePlan(); render();
+    }
+  });
+  document.addEventListener('dragstart', ev => {
+    const source=ev.target.closest('[data-drag-code]');
+    if (!source || !ev.dataTransfer) return;
+    if (ev.target.closest('select,input,button')) { ev.preventDefault(); return; }
+    ev.dataTransfer.setData('text/plain',source.dataset.dragCode); ev.dataTransfer.effectAllowed='move';
+  });
+  document.addEventListener('dragover', ev => { const term=ev.target.closest('[data-term]'); if(term) { ev.preventDefault(); term.classList.add('drop-over'); } });
+  document.addEventListener('dragleave', ev => { const term=ev.target.closest('[data-term]'); if(term && !term.contains(ev.relatedTarget)) term.classList.remove('drop-over'); });
+  document.addEventListener('dragend', () => document.querySelectorAll('.drop-over').forEach(el => el.classList.remove('drop-over')));
+  document.addEventListener('drop', ev => { const term=ev.target.closest('[data-term]'); if(term && ev.dataTransfer) { ev.preventDefault(); assignCourse(ev.dataTransfer.getData('text/plain'),term.dataset.term); } });
   const save = () => {
     try {
       localStorage.setItem('bapsir-check', JSON.stringify({
@@ -345,10 +463,13 @@ function init() {
   };
 
   document.addEventListener('change', ev => {
+    const semester = ev.target.closest('[data-plan-code]');
+    if (semester) { assignCourse(semester.dataset.planCode, semester.value); return; }
     const box = ev.target.closest('input[type=checkbox]');
     if (box) {
       box.dataset.code && (box.checked ? taken.add(box.dataset.code) : taken.delete(box.dataset.code));
-      save(); render();
+      for (const code of taken) delete plan.assignments[code];
+      savePlan(); save(); render();
     }
     if (ev.target.id === 'free' || ev.target.id === 'fcextra') {
       manual[ev.target.id === 'free' ? 'free' : 'fcExtra'] = Number(ev.target.value) || 0;
